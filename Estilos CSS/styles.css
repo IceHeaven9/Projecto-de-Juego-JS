@@ -1,0 +1,129 @@
+/* Reseteo básico y estilos del cuerpo de la página */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #f0f0f0; /* Color de fondo ligero */
+}
+
+/* Estilos del encabezado */
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  transition: top 0.5s; /* Transición suave al moverse hacia arriba */
+}
+
+/* Clases para el manejo del encabezado con JavaScript */
+header.centered {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header.moved-up {
+  top: 0;
+  transform: translateY(0%);
+}
+
+/* Estilos del título principal */
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Estilos para el formulario de entrada */
+.inputBox {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #333;
+  border-radius: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #5c5;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  background-color: #484;
+}
+
+/* Contenedor principal para las tarjetas */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 1rem;
+  padding: 1rem;
+  width: 90vw;
+  height: 90vh;
+  max-width: 1200px; /* Ancho máximo para la cuadrícula */
+  margin: 1rem auto;
+}
+
+/* Estilos individuales para cada tarjeta */
+.card {
+  width: 100%; /* Asegura que la tarjeta use todo el espacio asignado en la cuadrícula */
+  height: 0; /* Inicialmente no tiene altura */
+  padding-top: 150%; /* Proporción de aspecto basada en el padding */
+  position: relative; /* Posicionamiento relativo para contenido interno */
+  transition: visibility 0.5s, opacity 0.5s linear;
+  visibility: hidden; /* Inicialmente ocultas */
+  opacity: 0;
+}
+.content {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+/* Estilos para el frente y el dorso de las tarjetas */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front {
+  background: linear-gradient(to bottom, black, gray);
+}
+
+.back {
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
+  transform: rotateY(180deg);
+}
+
+/* Efecto de volteo para las tarjetas */
+.card.flipped .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
