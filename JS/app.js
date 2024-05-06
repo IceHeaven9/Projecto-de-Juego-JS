@@ -19,3 +19,11 @@ document.querySelector("form").addEventListener("submit", (event) => {
 });
 
 reveal(cards);
+
+const ul = document.querySelector(".content");
+const li1 = document.createElement("li");
+const li2 = document.createElement("li");
+li1.textContent = "Primer elemento";
+li2.textContent = "Segundo elemento";
+ul.appendChild(li1);
+ul.appendChild(li2);
