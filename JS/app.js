@@ -40,3 +40,8 @@ document.querySelector("form").addEventListener("submit", (event) => {
 // ul.querySelectorAll("li").forEach((li) => {
 // 	newUl.appendChild(li.cloneNode(true));
 // });
+
+// Llamar a la función con el array cards
+addCards(["🚀", "♠️", "🌻", "🃏", "♦️", "🌼", "♥️", "♣️"]);
+
+// Path: JS/functions.js
