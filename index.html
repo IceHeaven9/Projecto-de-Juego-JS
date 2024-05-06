@@ -1,129 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/Estilos CSS/reset.css" />
-    <link rel="stylesheet" href="/Estilos CSS/styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="/JS/app.js" type="module"></script>
-    <title>Juego de cartas</title>
-  </head>
-  <h1>juego</h1>
-  <body>
-    <header class="centered">
-      <h1>Juego de Memoria</h1>
-      <div class="inputBox">
-        <input
-          type="text"
-          id="user"
-          name="user"
-          required
-          placeholder="TU NOMBRE"
-        />
-        <button id="startGame">Iniciar Juego!</button>
-      </div>
-    </header>
-    <div class="container">
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">
-            <img src="/img/Logo HAB PNG.png" alt="logo hack a boss" />
-          </div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-      <section class="card">
-        <div class="content">
-          <div class="front">❔</div>
-          <div class="back">👻</div>
-        </div>
-      </section>
-    </div>
-  </body>
+  <link rel="stylesheet" href="/Estilos CSS/reset.css">
+  <link rel=" stylesheet" href="/Estilos CSS/styles.css" />
+
+  <script src="/JS/app.js" type="module"></script>
+  <title>Juego de cartas</title>
+</head>
+
+
+<body>
+  <header class="centered">
+    <h1>juego de memoria</h1>
+    <form class="inputbox">
+      <label for="user" id="userlabel"></label>
+      <input type="text" id="user" name="user" placeholder="Tu nombre" required>
+      <button id="startGame">Iniciar juego!</button>
+    </form>
+  </header>
+
+
+  <section class="container">
+    <article class="card">
+
+      <ul class="content">
+        <li class="front"></li>
+        <li class="back"></li>
+      </ul>
+
+    </article>
+  </section>
+
+
+</body>
+
 </html>

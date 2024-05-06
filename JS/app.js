@@ -1,29 +1,21 @@
 "use strict";
-document.getElementById("startGame").addEventListener("click", function () {
-  const userName = document.getElementById("user").value;
-  if (userName.trim() !== "") {
-    document.querySelector("header").classList.remove("centered");
-    document.querySelector("header").classList.add("moved-up");
-    document.querySelectorAll(".card").forEach((card) => {
-      card.style.visibility = "visible";
-      card.style.opacity = 1;
-    });
-  } else {
-    alert("Por favor, introduce tu nombre.");
-  }
+
+import { reveal, cards } from "./functions.js";
+
+document.querySelector("form").addEventListener("submit", (event) => {
+	event.preventDefault();
+	const { value: userName } = document.getElementById("user");
+	if (userName.trim() === "") return alert("Por favor, introduce tu nombre.");
+
+	const header = document.querySelector("header");
+	header.classList.remove("centered");
+	header.classList.add("moved-up");
+
+	document
+		.querySelectorAll(".card")
+		.forEach((card) =>
+			Object.assign(card.style, { visibility: "visible", opacity: 1 })
+		);
 });
 
-const cards = document.querySelectorAll(".card");
-
-const reveal = (e) => {
-  const currentCard = e.currentTarget;
-  currentCard.classList.add("flipped");
-
-  setTimeout(() => {
-    currentCard.classList.remove("flipped");
-  }, 1000);
-};
-
-for (const card of cards) {
-  card.addEventListener("click", reveal);
-}
+reveal(cards);
