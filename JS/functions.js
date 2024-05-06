@@ -1,18 +1,19 @@
 "use strict";
 
-const cards = document.querySelectorAll(".card");
+// const cards = document.querySelectorAll(".card");
+// const revealCard = document.addEventListener("DOMContentLoaded", () => {
+// 	const reveal = (event) => {
+// 		const currentCard = event.currentTarget;
+// 		currentCard.classList.add("flipped");
 
-const reveal = (e) => {
-	const currentCard = e.currentTarget;
-	currentCard.classList.add("flipped");
+// 		// setTimeout(() => {
+// 		//   currentCard.classList.remove("flipped");
+// 		// }, 1000);
+// 	};
 
-	// setTimeout(() => {
-	//   currentCard.classList.remove("flipped");
-	// }, 1000);
-};
+// 	for (const card of cards) {
+// 		card.addEventListener("click", reveal);
+// 	}
+// });
 
-for (const card of cards) {
-	card.addEventListener("click", reveal);
-}
-
-export { reveal, cards };
+// export { revealCard, cards };

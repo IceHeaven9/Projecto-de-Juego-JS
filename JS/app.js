@@ -1,7 +1,16 @@
 "use strict";
 
-import { reveal, cards } from "./functions.js";
-
+// import { cards, revealCard } from "./functions.js";
+const addCards = (cards) => {
+	const fragment = document.createDocumentFragment();
+	for (const card of cards) {
+		const ul = document.getElementsByClassName("content");
+		const li1 = (document.createElement("li").className = "front");
+		const li2 = (document.createElement("li").className = "back");
+		ul.appendChild(li1);
+		ul.appendChild(li2);
+	}
+};
 document.querySelector("form").addEventListener("submit", (event) => {
 	event.preventDefault();
 	const { value: userName } = document.getElementById("user");
@@ -18,12 +27,16 @@ document.querySelector("form").addEventListener("submit", (event) => {
 		);
 });
 
-reveal(cards);
+// revealCard(cards);
 
-const ul = document.querySelector(".content");
-const li1 = document.createElement("li");
-const li2 = document.createElement("li");
-li1.textContent = "Primer elemento";
-li2.textContent = "Segundo elemento";
-ul.appendChild(li1);
-ul.appendChild(li2);
+// ul.innerHTML = `<li class="front">
+// <img src="/images/Logo_HAB_PNG.png"</li>
+// 	<li class="back"></li>`;
+// fragment.append(ul);
+// article.append(fragment);
+// 	}
+// };
+
+// ul.querySelectorAll("li").forEach((li) => {
+// 	newUl.appendChild(li.cloneNode(true));
+// });
