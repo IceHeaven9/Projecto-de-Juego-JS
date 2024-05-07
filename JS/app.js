@@ -1,47 +1,58 @@
 "use strict";
 
-// import { cards, revealCard } from "./functions.js";
-const addCards = (cards) => {
-	const fragment = document.createDocumentFragment();
-	for (const card of cards) {
-		const ul = document.getElementsByClassName("content");
-		const li1 = (document.createElement("li").className = "front");
-		const li2 = (document.createElement("li").className = "back");
-		ul.appendChild(li1);
-		ul.appendChild(li2);
-	}
-};
 document.querySelector("form").addEventListener("submit", (event) => {
-	event.preventDefault();
-	const { value: userName } = document.getElementById("user");
-	if (userName.trim() === "") return alert("Por favor, introduce tu nombre.");
+  event.preventDefault();
+  const { value: userName } = document.getElementById("user");
+  if (userName.trim() === "") return alert("Por favor, introduce tu nombre.");
 
-	const header = document.querySelector("header");
-	header.classList.remove("centered");
-	header.classList.add("moved-up");
+  const header = document.querySelector("header");
+  header.classList.remove("centered");
+  header.classList.add("moved-up");
 
-	document
-		.querySelectorAll(".card")
-		.forEach((card) =>
-			Object.assign(card.style, { visibility: "visible", opacity: 1 })
-		);
+  document
+    .querySelectorAll(".card")
+    .forEach((card) =>
+      Object.assign(card.style, { visibility: "visible", opacity: 1 })
+    );
 });
 
-// revealCard(cards);
+window.onload = function () {
+  // Obtén el contenedor donde quieres agregar las tarjetas
+  const container = document.querySelector(".container");
 
-// ul.innerHTML = `<li class="front">
-// <img src="/images/Logo_HAB_PNG.png"</li>
-// 	<li class="back"></li>`;
-// fragment.append(ul);
-// article.append(fragment);
-// 	}
-// };
+  // Define la cantidad de tarjetas que quieres crear
+  const numberOfCards = 16;
 
-// ul.querySelectorAll("li").forEach((li) => {
-// 	newUl.appendChild(li.cloneNode(true));
-// });
+  // Crea las tarjetas
+  for (let i = 0; i < numberOfCards; i++) {
+    // Crea los elementos necesarios
+    const card = document.createElement("article");
+    const content = document.createElement("ul");
+    const front = document.createElement("li");
+    const back = document.createElement("li");
+    const img = document.createElement("img");
 
-// Llamar a la función con el array cards
-addCards(["🚀", "♠️", "🌻", "🃏", "♦️", "🌼", "♥️", "♣️"]);
+    // Añade las clases necesarias
+    card.classList.add("card");
+    content.classList.add("content");
+    front.classList.add("front");
+    back.classList.add("back");
 
-// Path: JS/functions.js
+    // Añade el atributo src a la imagen
+    img.src = "/img/Logo HAB PNG.png";
+    img.alt = "logo hack a boss";
+
+    // Añade la imagen al frente de la tarjeta
+    front.appendChild(img);
+
+    // Añade el frente y el dorso al contenido de la tarjeta
+    content.appendChild(front);
+    content.appendChild(back);
+
+    // Añade el contenido a la tarjeta
+    card.appendChild(content);
+
+    // Añade la tarjeta al contenedor
+    container.appendChild(card);
+  }
+};

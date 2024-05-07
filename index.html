@@ -1,146 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="/Estilos CSS/reset.css">
-  <link rel=" stylesheet" href="/Estilos CSS/styles.css" />
-
-  <script src="/JS/app.js"></script>
-  <title>Juego de cartas</title>
-</head>
-
-
-<body>
-  <header class="centered">
-    <h1>juego de memoria</h1>
-    <form class="inputbox">
-      <label for="user" id="userlabel"></label>
-      <input type="text" id="user" name="user" placeholder="Tu nombre" required>
-      <button id="startGame">Iniciar juego!</button>
-    </form>
-  </header>
-
-
-  <section class="container">
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-    <article class="card">
-
-      <ul class="content">
-
-      </ul>
-
-    </article>
-
-  </section>
-
-
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <title>Juego de Memoria</title>
+    <script type="module" src="/app.js"></script>
+    <script type="module" src="/ejercicio.js"></script>
+    <link rel="stylesheet" href="/reset.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="centered">
+      <h1>Juego de Memoria</h1>
+      <form class="inputBox">
+        <label for="user" id="userLabel"></label>
+        <input
+          type="text"
+          id="user"
+          name="user"
+          placeholder="Tu nombre"
+          required
+        />
+        <button id="startGame">Iniciar juego!</button>
+      </form>
+    </header>
+    <main>
+      <section class="container">
+        <!-- Las tarjetas se agregarán aquí dinámicamente con JavaScript -->
+      </section>
+    </main>
+    <button class="reset">Reiniciar</button>
+  </body>
 </html>
