@@ -83,3 +83,7 @@ button[type="reset"] {
   font-family: arial, sans-serif;
   z-index: 1000;
 }
+
+.hidden {
+  display: none;
+}
