@@ -130,7 +130,6 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  /* Añade un espacio entre las imágenes */
 }
 
 .container img {
@@ -140,7 +139,5 @@ footer {
 
 .container article {
   flex: 1 0 20%;
-  /* Esto hará que los artículos ocupen al menos el 20% del ancho del contenedor */
   margin: 1rem;
-  /* Esto añade un poco de espacio alrededor de cada artículo */
 }
