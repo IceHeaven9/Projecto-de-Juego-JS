@@ -38,10 +38,6 @@ h1#title {
 
 }
 
-img {
-  width: 25%;
-  height: 25%;
-}
 
 form.inputBox {
   display: flex;
@@ -129,12 +125,18 @@ footer {
 
 }
 
-/* .container {
-  max-width: 100;
+.container {
+  margin: 1rem;
   display: grid;
-  grid-template-columns: repeat(4, min-content);
-  grid-template-rows: repeat(4, auto);
-} */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  /* Añade un espacio entre las imágenes */
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
 
 .container article {
   flex: 1 0 20%;
