@@ -3,16 +3,18 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Juego de Memoria</title>
-  <script type="module" src="/JS/app.js"></script>
-  <script type="module" src="/JS/functions.js"></script>
+  <title>March cards</title>
+
   <link rel="stylesheet" href="/Estilos CSS/reset.css" />
   <link rel="stylesheet" href="/Estilos CSS/styles.css" />
+
+  <script type="module" src="/JS/app.js"></script>
+  <script type="module" src="/JS/functions.js"></script>
 </head>
 
 <body>
   <header class="centered">
-    <h1>Juego de Memoria</h1>
+    <h1 id="title">Match cards</h1>
     <form class="inputBox">
       <label for="user" id="userLabel"></label>
       <input type="text" id="user" name="user" placeholder="Tu nombre" required />
@@ -24,7 +26,7 @@
       <!-- Las tarjetas se agregarán aquí dinámicamente con JavaScript -->
     </section>
   </main>
-  <button class="reset">Reiniciar</button>
+  <button type="reset">Reiniciar</button>
 </body>
 
 </html>
