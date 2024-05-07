@@ -10,12 +10,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
 	// crear una variable y guardar el valor del input en el localStorage
 
 	event.preventDefault();
-	let gameUser = document.querySelector("#user").value;
-	localStorage.setItem("userName", gameUser);
-
-	const { value: userName } = document.getElementById("user");
+	const userName = document.querySelector("#user").value;
 	if (userName.trim() === "") return alert("Por favor, introduce tu nombre.");
-	//crear un div que contenga un p con el nombre de usuario introducido en el input del form
+	localStorage.setItem("userName", userName);
 
 	header.classList.remove("centered");
 	header.classList.add("moved-up");
