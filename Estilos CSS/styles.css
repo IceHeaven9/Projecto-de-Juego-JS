@@ -1,4 +1,4 @@
-main {
+.hidden {
   display: none;
   grid-area: main;
 }
