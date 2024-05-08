@@ -10,7 +10,7 @@ h2.textContent = user.value;
 divUser.appendChild(h2);
 //Quiero que en H2 se muestre el valor guardado del input user
 user.addEventListener("input", function () {
-  h2.textContent = user.value;
+  h2.textContent = "Mucha suerte, " + user.value + "!";
 });
 
 window.onload = function () {
