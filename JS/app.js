@@ -16,7 +16,7 @@ const divContador = document.createElement("div");
 document.body.appendChild(divContador);
 divContador.id = "divContador";
 
-// Crear un div para el contador
+// Crear un h3 para el contador
 const h3Contador = document.createElement("h3");
 h3Contador.classList.add("contador");
 h3Contador.textContent = "";
@@ -54,7 +54,7 @@ startGame.addEventListener("click", function () {
     let tiempoRestante = tiempoFinal - Date.now();
     contador = Math.round(tiempoRestante / 1000);
     h3Contador.textContent = ` ${contador} `;
-    divTextContador.textContent = `Tiempo restante:     segundos`;
+    divTextContador.textContent = `Tiempo restante:        seg`;
     contador--;
 
     if (contador < 0) {
