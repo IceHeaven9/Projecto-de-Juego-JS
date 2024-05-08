@@ -9,14 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	const startGameBtn = document.getElementById("startGame");
 	const userInput = document.getElementById("user");
 	const divContador = document.getElementById("contador");
+	const divUserContent = document.getElementById("divUser");
 
 	// Inicialmente, oculta solo el contenido principal del juego
+	divUserContent.classList.add("hidden");
 	gameContent.classList.add("hidden");
 	divContador.classList.add("hidden");
 
 	startGameBtn.addEventListener("click", function (event) {
 		event.preventDefault(); // Previene el comportamiento por defecto del formulario
 		if (userInput.value.trim() !== "") {
+			divUserContent.classList.remove("hidden"); // Muestra el contenido del usuario
 			divContador.classList.remove("hidden"); // Muestra el contador
 			gameContent.classList.remove("hidden"); // Muestra el contenido del juego
 			headerContent.classList.add("hidden"); // Oculta el header
