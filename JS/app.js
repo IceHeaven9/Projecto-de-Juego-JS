@@ -5,35 +5,34 @@ const divUser = document.createElement("div");
 divUser.id = "divUser";
 document.body.appendChild(divUser);
 
-// Crear un div para el contador
-const divContador = document.createElement("div");
-divContador.id = "contador";
-divUser.appendChild(divContador);
-
 //Escribe un texto que ponga el valor del input user
 const user = document.getElementById("user");
 const h2 = document.createElement("h2");
 h2.textContent = user.value;
 divUser.appendChild(h2);
 
+// Crear un div para el contador
+const h3Contador = document.createElement("h3");
+h3Contador.id = "contador";
+divUser.appendChild(h3Contador);
+
 //Quiero que en H2 se muestre el valor guardado del input user
 user.addEventListener("input", function () {
-	h2.textContent = "Suerte, " + user.value + "!";
+	h2.textContent = "Suerte, " + user.value + "!!";
 });
 
-//Esta es la funcion que incia el contador
 const startGameCouter = document.getElementById("startGame");
 
 startGame.addEventListener("click", function () {
 	// Iniciar un contador de 10 segundos
 	let contador = 10;
 	const intervalId = setInterval(() => {
-		divContador.textContent = `Contador: ${contador}`;
+		h3Contador.textContent = `Tiempo para memorizar: ${contador} Segundos`;
 		contador--;
 
 		if (contador < 0) {
 			clearInterval(intervalId);
-			divContador.textContent = "Contador: 0";
+			h3Contador.textContent = "Comienza el juego!!!";
 		}
 	}, 1000);
 });
