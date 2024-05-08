@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE PRE-CONECT -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
 
-  <!-- GOOGLE PRE-CONECT -->
+    <!-- GOOGLE FONTS -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- ESTILOS CSS -->
+    <link rel="stylesheet" href="/Estilos CSS/reset.css" />
+    <link rel="stylesheet" href="/Estilos CSS/styles.css" />
 
-  <!-- GOOGLE FONTS -->
+    <!-- JAVASCRIPT -->
+    <script src="/JS/app.js" type="module"></script>
+    <script src="/JS/visibilityControls.js"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <title>March cards</title>
+  </head>
 
-  <!-- ESTILOS CSS -->
-  <link rel="stylesheet" href="/Estilos CSS/reset.css" />
-  <link rel="stylesheet" href="/Estilos CSS/styles.css" />
-
-  <!-- JAVASCRIPT -->
-  <script src="/JS/app.js" type="module"></script>
-  <script src="/JS/visibilityControls.js"></script>
-
-  <title>March cards</title>
-</head>
-
-<body class="mainContent">
-  <header class="centered">
-    <h1 id="title">MATCH CARDS</h1>
-    <form class="inputBox">
-      <label for="user" id="userLabel"></label>
-      <input type="text" id="user" name="user" placeholder="Tu nombre" required />
-      <button id="startGame">Iniciar juego!</button>
-    </form>
-  </header>
-  <main id="gameContent">
-    <section class="container">
-      <!-- Las tarjetas se agregarán aquí dinámicamente con JavaScript -->
-    </section>
-  </main>
-  <button type="reset" id="resetBtn">Reiniciar</button>
-  <footer>
-    <p id="copyright">&copy;2024 HACK A BOSS</p>
-  </footer>
-</body>
-
-
+  <body class="mainContent">
+    <header class="centered">
+      <h1 id="title">MATCH CARDS</h1>
+      <form class="inputBox">
+        <label for="user" id="userLabel"></label>
+        <input
+          type="text"
+          id="user"
+          name="user"
+          placeholder="Tu nombre"
+          required
+        />
+        <button id="startGame">Iniciar juego!</button>
+      </form>
+    </header>
+    <main id="gameContent">
+      <section class="container">
+        <!-- Las tarjetas se agregarán aquí dinámicamente con JavaScript -->
+      </section>
+    </main>
+    <button type="reset" id="resetBtn">Reiniciar</button>
+    <footer>
+      <p id="copyright">&copy;2024 HACK A BOSS</p>
+    </footer>
+  </body>
 </html>
