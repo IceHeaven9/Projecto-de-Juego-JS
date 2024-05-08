@@ -13,7 +13,6 @@
   z-index: 1000;
 }
 
-
 header.centered {
   text-align: center;
   margin-bottom: 20px;
@@ -69,7 +68,6 @@ button[type="reset"]:hover {
   display: none;
 }
 
-
 /* BODY */
 
 html,
@@ -91,7 +89,6 @@ body {
   justify-content: center;
 }
 
-
 /* MAIN */
 
 main {
@@ -103,8 +100,6 @@ main {
   width: 100%;
   overflow: auto;
 }
-
-
 
 p#copyright {
   background-color: rgba(0, 0, 0, 0.6);
@@ -161,26 +156,35 @@ footer {
   width: 90%;
   height: 90%;
   padding: 0.5rem;
-
 }
 
 article ul {
   width: 100%;
   height: 100%;
-
 }
-
 
 .card {
-  height: 3rem;
-  width: 2rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
   /* gap: 0.1rem; */
-
 }
-
-
-.front,
 .back {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  background-color: black;
+}
+.front {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   font-size: 1.6rem;
