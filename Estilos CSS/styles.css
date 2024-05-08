@@ -1,9 +1,9 @@
 /* HEADER */
 
 #divUser {
-  position: fixed;
-  top: 18%;
-  left: 50%;
+  position: absolute;
+  top: 20%;
+  left: 33%;
   transform: translate(-50%, -50%);
   padding: 10px;
   border: 1px solid grey;
@@ -11,8 +11,24 @@
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  border-radius: 20px;
+  font-size: small;
 }
 
+#divContador {
+  position: absolute;
+  top: 20%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 20px;
+  font-size: small;
+}
 header.centered {
   text-align: center;
   margin-bottom: 20px;
@@ -92,39 +108,14 @@ body {
 /* MAIN */
 
 main {
+  max-height: 720px;
+  max-width: 400px;
+  min-width: 320px;
+  min-height: 560px;
   flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
   overflow: auto;
-}
-
-p#copyright {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  color: #c5c2c2;
-  padding: 0.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.hidden {
-  display: none;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-#gameContent {
   margin: 0.5rem;
-  height: 55vh;
+  height: 65vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -139,6 +130,7 @@ footer {
 }
 
 .container {
+  margin-top: 5rem;
   height: 100%;
   width: 100%;
   border: 5px solid rgb(255, 231, 195);
@@ -153,8 +145,8 @@ footer {
 }
 
 .container img {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   padding: 0.5rem;
 }
 
@@ -190,4 +182,25 @@ article ul {
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background-color: black;
+}
+
+p#copyright {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  color: #c5c2c2;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }

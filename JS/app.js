@@ -11,10 +11,15 @@ const h2 = document.createElement("h2");
 h2.textContent = user.value;
 divUser.appendChild(h2);
 
+const divContador = document.createElement("div");
+document.body.appendChild(divContador);
+divContador.id = "divContador";
+
 // Crear un div para el contador
 const h3Contador = document.createElement("h3");
-h3Contador.id = "contador";
-divUser.appendChild(h3Contador);
+h3Contador.classList.add("contador");
+h3Contador.textContent = "Tiempo para memorizar: ";
+divContador.appendChild(h3Contador);
 
 //Quiero que en H2 se muestre el valor guardado del input user
 user.addEventListener("input", function () {
