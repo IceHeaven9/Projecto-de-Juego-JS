@@ -1,5 +1,7 @@
 /* HEADER */
-
+:root {
+  --text-font-family: "Poetsan One", "Arial", "sans-serif";
+}
 #divUser {
   position: absolute;
   top: 20%;
@@ -8,27 +10,34 @@
   padding: 10px;
   border: 1px solid grey;
   border-radius: 5px;
-  background-color: white;
+  background-color: #eaeaec;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   border-radius: 20px;
   font-size: small;
+  /* Hacemos que el texto se muestre en una sola linea */
+  white-space: nowrap;
 }
 
 #divTextContador {
   z-index: 1;
   position: absolute;
-  top: 25%;
+  top: 25.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
   border: 1px solid grey;
   border-radius: 5px;
-  background-color: white;
+  background-color: #eaeaec;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   white-space: pre-wrap;
+  /* le cambiamos la fuente al texto */
+  font-family: "Arial", sans-serif;
+
+  font-weight: bold;
+  color: #4b4e50;
 }
 
 #divContador {
@@ -40,7 +49,6 @@
   background-color: transparent;
   border-radius: 20px;
   font-size: 0.8rem;
-
 }
 
 header.centered {
@@ -49,8 +57,13 @@ header.centered {
 }
 
 h1#title {
-  color: #4b4e50;
-  font-size: 2.5rem;
+  color: #191919;
+  font-size: 3rem;
+  font-family: "Dancing Script";
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 2);
+
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 form.inputBox {
@@ -61,12 +74,17 @@ form.inputBox {
 }
 
 input[type="text"]#user {
+  font-family: "Poetsan One";
+  font-style: italic;
+  font-weight: bolder;
+  color: #5e5e5e;
+  background-color: #eaeaec;
   font-size: 1rem;
   padding: 10px;
   border: none;
   border-radius: 20px;
   width: 100px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
   height: 40px;
   width: 200px;
   outline: none;
@@ -75,15 +93,18 @@ input[type="text"]#user {
 
 button#startGame,
 button[type="reset"] {
-  background-color: #4caf50;
-  /* Verde brillante */
-  color: white;
+  font-family: "Poetsan One";
+  font-weight: bolder;
+  margin-top: 1rem;
+  background-color: #5e5e5e;
+
+  color: #eaeaec;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -145,6 +166,7 @@ main {
 
 .container {
   margin-top: 5rem;
+  margin-bottom: 1rem;
   height: 100%;
   width: 100%;
   border: 5px solid rgb(255, 231, 195);
@@ -157,7 +179,6 @@ main {
   gap: 0.5rem;
   justify-content: center;
 }
-
 
 .container img {
   width: 100%;
@@ -202,22 +223,17 @@ article ul {
 }
 
 p#copyright {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
   text-align: center;
-  margin-top: 20px;
-  color: #c5c2c2;
-  padding: 0.5rem;
+  color: #0c0c0c;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.6rem;
+}
+footer {
+  position: absolute;
+  bottom: 18%;
+  width: 100%;
 }
 
 .hidden {
   display: none;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
