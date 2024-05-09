@@ -53,8 +53,7 @@ startGame.addEventListener("click", function () {
   const intervalId = setInterval(() => {
     let tiempoRestante = tiempoFinal - Date.now();
     contador = Math.round(tiempoRestante / 1000);
-    h3Contador.textContent = ` ${contador} `;
-    divTextContador.textContent = `Tiempo restante:        seg`;
+    divTextContador.textContent = `Tiempo restante: ${contador} seg`;
     contador--;
 
     if (contador < 0) {

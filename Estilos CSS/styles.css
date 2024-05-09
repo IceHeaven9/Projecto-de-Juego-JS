@@ -6,7 +6,7 @@
 #divUser {
   font-family: "Poetsen One";
   position: absolute;
-  top: 20.5%;
+  top: 15.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 5px;
@@ -24,7 +24,7 @@
 #divTextContador {
   z-index: 1;
   position: absolute;
-  top: 25.5%;
+  top: 22%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 5px;
@@ -33,7 +33,7 @@
   box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
   border-radius: 20px;
   font-size: 1rem;
-  white-space: pre-wrap;
+  white-space: nowrap;
   font-family: "Poetsen One";
   font-weight: bolder;
   color: #4b4e50;
