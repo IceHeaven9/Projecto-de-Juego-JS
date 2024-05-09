@@ -1,7 +1,4 @@
 "use strict";
-//
-// Funcionalidad de introducir nombre de usuario y aparecer las tarjetas
-//
 
 document.addEventListener("DOMContentLoaded", function () {
   const gameContent = document.getElementById("gameContent");
@@ -29,6 +26,24 @@ document.addEventListener("DOMContentLoaded", function () {
       divContadorContent.classList.remove("hidden");
       divTextContadorContent.classList.remove("hidden");
       footerContent.classList.remove("hidden");
+
+      // Seleccionar todas las tarjetas
+      const cards = document.querySelectorAll(".card");
+
+      // Función para girar las tarjetas
+      const reveal = (e) => {
+        const currentCard = e.currentTarget;
+        currentCard.classList.add("flipped");
+
+        setTimeout(() => {
+          currentCard.classList.remove("flipped");
+        }, 1000);
+      };
+
+      // Añadir evento de clic a cada tarjeta
+      for (const card of cards) {
+        card.addEventListener("click", reveal);
+      }
     } else {
       alert("Por favor, ingresa tu nombre para comenzar el juego.");
     }

@@ -200,9 +200,12 @@ article ul {
   height: 100%;
   width: 100%;
   position: relative;
-  /* gap: 0.1rem; */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
-
+.card.flipped {
+  transform: rotateY(180deg);
+}
 .back {
   z-index: 0;
   position: absolute;
