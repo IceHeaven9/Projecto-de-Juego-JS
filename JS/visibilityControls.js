@@ -36,15 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 				"/images/6.png",
 				"/images/7.png",
 				"/images/8.png",
-				"/images/1c.png",
-				"/images/2c.png",
-				"/images/3c.png",
-				"/images/4c.png",
-				"/images/5c.png",
-				"/images/6c.png",
-				"/images/7c.png",
-				"/images/8c.png",
 			];
+			cardBackImage = cardBackImage.concat(cardBackImage);
+			cardBackImage = cardBackImage.sort(() => Math.random() - 0.5);
 
 			// Seleccionar todas las tarjetas
 			const cards = document.querySelectorAll(".card");
@@ -69,17 +63,36 @@ document.addEventListener("DOMContentLoaded", function () {
 					"La cantidad de elementos back y de imágenes no coincide"
 				);
 			}
+			let flippedCards = [];
 
 			// Función para girar las tarjetas
 			const reveal = (e) => {
 				const currentCard = e.currentTarget;
 				currentCard.classList.add("flipped");
 
-				// setTimeout(() => {
-				//   currentCard.classList.remove("flipped");
-				// }, 1000);
-			};
+				// Añadir la tarjeta actual a las tarjetas volteadas
+				flippedCards.push(currentCard);
 
+				// Si hay dos tarjetas volteadas
+				if (flippedCards.length === 2) {
+					// Obtener las imágenes de las tarjetas volteadas
+					const img1 = flippedCards[0].querySelector("img").src;
+					const img2 = flippedCards[1].querySelector("img").src;
+
+					// Si las imágenes son iguales
+					if (img1.url === img2.url) {
+						console.log("¡Has encontrado una pareja!");
+					} else {
+						// Si las imágenes no son iguales, voltear las tarjetas de nuevo después de 1 segundo
+						setTimeout(() => {
+							flippedCards[0].classList.remove("flipped");
+							flippedCards[1].classList.remove("flipped");
+							flippedCards = [];
+						}, 1000);
+					}
+					flippedCards = [];
+				}
+			};
 			// Añadir evento de clic a cada tarjeta
 			for (const card of cards) {
 				card.addEventListener("click", reveal);
