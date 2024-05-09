@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentCard = e.currentTarget;
         currentCard.classList.add("flipped");
 
-        setTimeout(() => {
-          currentCard.classList.remove("flipped");
-        }, 1000);
+        // setTimeout(() => {
+        //   currentCard.classList.remove("flipped");
+        // }, 1000);
       };
 
       // Añadir evento de clic a cada tarjeta
