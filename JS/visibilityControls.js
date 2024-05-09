@@ -5,27 +5,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const headerContent = document.querySelector("header");
   const startGameBtn = document.getElementById("startGame");
   const userInput = document.getElementById("user");
+  const container = document.querySelector(".container");
   const divUserContent = document.getElementById("divUser");
   const divContadorContent = document.getElementById("divContador");
   const divTextContadorContent = document.getElementById("divTextContador");
-  const footerContent = document.querySelector("footer");
 
-  // Inicialmente, oculta solo el contenido principal del juego
-  divUserContent.classList.add("hidden");
   gameContent.classList.add("hidden");
+  divUserContent.classList.add("hidden");
   divContadorContent.classList.add("hidden");
   divTextContadorContent.classList.add("hidden");
-  footerContent.classList.add("hidden");
 
   startGameBtn.addEventListener("click", function (event) {
     event.preventDefault();
     if (userInput.value.trim() !== "") {
-      divUserContent.classList.remove("hidden");
-      gameContent.classList.remove("hidden");
       headerContent.classList.add("hidden");
+      gameContent.classList.remove("hidden");
+      divUserContent.classList.remove("hidden");
       divContadorContent.classList.remove("hidden");
       divTextContadorContent.classList.remove("hidden");
-      footerContent.classList.remove("hidden");
 
       let cardBackImage = [
         { src: "/images/1.png", value: 1 },
@@ -45,92 +42,90 @@ document.addEventListener("DOMContentLoaded", function () {
         { src: "/images/7c.png", value: 7 },
         { src: "/images/8c.png", value: 8 },
       ];
-      // Asignar el mismo valor a las imágenes correspondientes
-      for (let i = 0; i < cardBackImage.length / 2; i++) {
-        cardBackImage[i].value =
-          cardBackImage[i + cardBackImage.length / 2].value;
-      }
+
+      // Mezclar las tarjetas
       cardBackImage = cardBackImage.sort(() => Math.random() - 0.5);
 
-      // Seleccionar todas las tarjetas
-      const cards = document.querySelectorAll(".card");
+      // Limpiar el contenedor de tarjetas antes de agregar nuevas tarjetas
+      container.innerHTML = "";
 
-      // Recorrer cada tarjeta
-      for (let i = 0; i < cards.length; i++) {
-        // Crear un nuevo elemento img
+      // Crear las tarjetas
+      for (let i = 0; i < cardBackImage.length; i++) {
+        const card = document.createElement("article");
+        const content = document.createElement("ul");
+        const front = document.createElement("li");
+        const back = document.createElement("li");
         const img = document.createElement("img");
 
-        // Asignar el atributo src con la URL de la imagen correspondiente
+        card.classList.add("card");
+        content.classList.add("content");
+        front.classList.add("front");
+        back.classList.add("back");
+
+        // Asignar valor a la tarjeta trasera
         img.src = cardBackImage[i].src;
-
-        // Asignar el atributo data-value con el valor correspondiente
         img.dataset.value = cardBackImage[i].value;
+        back.dataset.value = cardBackImage[i].value;
+        back.appendChild(img);
 
-        // Añadir el elemento img a la tarjeta
-        cards[i].appendChild(img);
+        // Asignar imagen al frente
+        const frontImg = document.createElement("img");
+        frontImg.src = "/images/Logo_HAB_PNG.png";
+        frontImg.alt = "logo hack a boss";
+        front.appendChild(frontImg);
+
+        content.appendChild(front);
+        content.appendChild(back);
+        card.appendChild(content);
+        container.appendChild(card);
+
+        card.addEventListener("click", reveal);
       }
 
-      const backs = document.querySelectorAll("li.back");
-
-      // Asegurarte de que hay la misma cantidad de elementos back y de imágenes
-      if (backs.length === cardBackImage.length) {
-        // Recorrer cada elemento back
-        for (let i = 0; i < backs.length; i++) {
-          // Crear un nuevo elemento img
-          const img = document.createElement("img");
-
-          // Asignar el atributo src con la URL de la imagen correspondiente
-          img.src = cardBackImage[i].src;
-          // Asignar el atributo data-value con el valor correspondiente
-          img.dataset.value = cardBackImage[i].value;
-
-          // Añadir el elemento img al elemento back
-          backs[i].appendChild(img);
-        }
-      } else {
-        console.error(
-          "La cantidad de elementos back y de imágenes no coincide"
-        );
-      }
       let flippedCards = [];
 
       // Función para girar las tarjetas
-      const reveal = (e) => {
+      function reveal(e) {
         const currentCard = e.currentTarget;
-        currentCard.classList.add("flipped");
-
-        // Añadir la tarjeta actual a las tarjetas volteadas
-        flippedCards.push(currentCard);
+        if (
+          flippedCards.length < 2 &&
+          !currentCard.classList.contains("flipped")
+        ) {
+          currentCard.classList.add("flipped");
+          flippedCards.push(currentCard);
+        }
 
         // Si hay dos tarjetas volteadas
         if (flippedCards.length === 2) {
-          // Obtener las imágenes de las tarjetas volteadas
-          const img1Value = flippedCards[0].querySelector("img").dataset.value;
-          const img2Value = flippedCards[1].querySelector("img").dataset.value;
+          const img1Value =
+            flippedCards[0].querySelector(".back img").dataset.value;
+          const img2Value =
+            flippedCards[1].querySelector(".back img").dataset.value;
 
-          // Imprimir los valores data-value para depuración
           console.log(img1Value, img2Value);
 
-          // Comparar los valores de las imágenes
           if (img1Value === img2Value) {
-            console.log("¡Encontraste un par!");
-            // Los valores coinciden, puedes hacer algo aquí si lo necesitas
+            flippedCards = [];
+            incrementarIntentos();
           } else {
-            // Los valores no coinciden, voltear las tarjetas después de un retraso
             setTimeout(() => {
               flippedCards[0].classList.remove("flipped");
               flippedCards[1].classList.remove("flipped");
-            }, 1000); // 1000 milisegundos = 1 segundo
+              flippedCards = [];
+              incrementarIntentos();
+            }, 500);
           }
-          flippedCards = [];
         }
-      };
-      // Añadir evento de clic a cada tarjeta
-      for (const card of cards) {
-        card.addEventListener("click", reveal);
       }
     } else {
       alert("Por favor, ingresa tu nombre para comenzar el juego.");
     }
   });
 });
+
+// Crear una funcion que incremente el contador de intentos y que sume uno cada vez que se haga click en dos tarjetas
+let intentos = 0;
+function incrementarIntentos() {
+  intentos++;
+  divIntentos.textContent = `Intentos: ${intentos}`;
+}
