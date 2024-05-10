@@ -1,11 +1,13 @@
 /* HEADER */
 :root {
   --text-font-family: "Poetsen One", "Arial", "sans-serif";
-  --title-font-family: "Dancing Script", "Arial", "sans-serif";
+  --title-font-family: "Oleo Script", "Arial", "sans-serif";
   --button-hover-color: rgb(33, 169, 255);
   --main-color: rgb(50, 83, 114);
   --main-color2: rgb(202, 202, 181);
   --div-background-color: rgb(234, 234, 236);
+  --card-background-color: rgb(249, 165, 199);
+  --card-background-color2: rgb(217, 221, 194);
 }
 
 #divIntentos {
@@ -83,12 +85,13 @@
 
 
 h1#title {
-  color: #191919;
+  color: rgb(97, 168, 164);
   font-size: 3rem;
   font-family: var(--title-font-family);
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 2);
   margin-bottom: 2rem;
   margin-top: 2rem;
+  animation: anim 5s infinite;
 }
 
 form.inputBox {
@@ -249,7 +252,7 @@ article ul {
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background-color: black;
-  background: linear-gradient(rgb(249, 165, 199), rgb(217, 221, 194));
+  background: linear-gradient(var(--card-background-color), var(--card-background-color2));
   transform: rotateY(180deg);
 }
 
@@ -310,6 +313,33 @@ footer {
   }
 }
 
+
+@keyframes anim {
+  0% {
+    color: rgb(97, 168, 164);
+  }
+
+  25% {
+    color: rgb(50, 83, 114);
+  }
+
+
+  50% {
+    color: rgb(59, 59, 59);
+  }
+
+
+  75% {
+    color: rgb(202, 202, 181);
+  }
+
+
+  100% {
+    color: rgb(249, 165, 199);
+  }
+
+  /*Otra vez amarillo*/
+}
 
 
 @media screen and (min-width: 768px) {
