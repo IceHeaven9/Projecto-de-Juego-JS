@@ -39,7 +39,7 @@
   background-color: var(--div-background-color);
   box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   white-space: nowrap;
   color: #4b4e50;
 }
@@ -63,7 +63,6 @@
   text-align: left;
 }
 
-
 #divFallos {
   position: absolute;
   top: 11%;
@@ -82,7 +81,6 @@
   padding-right: 15px;
   text-align: left;
 }
-
 
 h1#title {
   color: rgb(97, 168, 164);
@@ -144,9 +142,13 @@ button[type="reset"]:hover {
 
 #resetBtn {
   position: absolute;
-  bottom: 0.5%;
-  right: 6%;
+  bottom: 2%;
+  right: 4.3%;
   font-size: 0.8rem;
+  padding: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
 }
 
 /* BODY */
@@ -176,10 +178,10 @@ body {
 main {
   box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
   position: relative;
-  max-height: 720px;
-  max-width: 400px;
-  min-width: 320px;
   min-height: 560px;
+  max-height: 560px;
+  min-width: 320px;
+  max-width: 400px;
   flex-grow: 1;
   overflow: auto;
   margin: 0.5rem;
@@ -200,27 +202,17 @@ main {
 
 .container {
   margin-top: 6rem;
+  margin-bottom: 2rem;
   height: 100%;
   width: 100%;
-  border: 5px solid rgb(108, 174, 173);
-  background-color: #070808a9;
   padding: 1rem;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 1rem;
   justify-content: center;
 }
-
-.container img {
-  width: 100%;
-  height: 100%;
-  padding: 0.5rem;
-}
-
-
-
 article ul {
   width: 100%;
   height: 100%;
@@ -229,6 +221,30 @@ article ul {
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 2);
+}
+
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-sizing: border-box;
+  padding: 1.5rem;
+}
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 
 .card {
@@ -252,7 +268,10 @@ article ul {
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background-color: black;
-  background: linear-gradient(var(--card-background-color), var(--card-background-color2));
+  background: linear-gradient(
+    var(--card-background-color),
+    var(--card-background-color2)
+  );
   transform: rotateY(180deg);
 }
 
@@ -274,7 +293,7 @@ article ul {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background-color: black;
+
   background: linear-gradient(rgb(20, 15, 15), rgb(39, 39, 39));
 }
 
@@ -284,11 +303,9 @@ article ul {
 
 p#copyright {
   font-family: var(--text-font-family);
-  text-align: center;
+  text-align: left;
   color: #0c0c0c;
-  font-size: 0.8rem;
-
-  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
 }
 
 footer {
@@ -300,7 +317,7 @@ footer {
 }
 
 .matched {
-  animation: matched 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: matched 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes matched {
@@ -313,7 +330,6 @@ footer {
   }
 }
 
-
 @keyframes anim {
   0% {
     color: rgb(97, 168, 164);
@@ -323,16 +339,13 @@ footer {
     color: rgb(50, 83, 114);
   }
 
-
   50% {
     color: rgb(59, 59, 59);
   }
 
-
   75% {
     color: rgb(202, 202, 181);
   }
-
 
   100% {
     color: rgb(249, 165, 199);
@@ -341,10 +354,9 @@ footer {
   /*Otra vez amarillo*/
 }
 
-
 @media screen and (min-width: 768px) {
   #resetBtn {
-    bottom: 0%;
-    right: 5%;
+    bottom: 2%;
+    right: 4.3%;
   }
 }
