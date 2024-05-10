@@ -74,7 +74,7 @@ startGame.addEventListener("click", function () {
 			clearInterval(intervalId);
 			h3Contador.textContent = "";
 			divTextContador.textContent = "";
-			divTextContador.classList.add("hidden");
+			divTextContador.textContent = "Comienza el juego!!";
 
 			const flippedCards = document.querySelectorAll(".card.flipped");
 

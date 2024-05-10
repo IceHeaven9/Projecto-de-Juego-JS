@@ -10,12 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
 	const divContadorContent = document.getElementById("divContador");
 	const divTextContadorContent = document.getElementById("divTextContador");
 	const divIntentosContent = document.getElementById("divIntentos");
+	const resetBtnContent = document.getElementById("resetBtn");
 
 	gameContent.classList.add("hidden");
 	divUserContent.classList.add("hidden");
 	divContadorContent.classList.add("hidden");
 	divTextContadorContent.classList.add("hidden");
 	divIntentosContent.classList.add("hidden");
+	resetBtnContent.classList.add("hidden");
 
 	startGameBtn.addEventListener("click", function (event) {
 		event.preventDefault();
@@ -26,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
 			divContadorContent.classList.remove("hidden");
 			divTextContadorContent.classList.remove("hidden");
 			divIntentosContent.classList.remove("hidden");
+			resetBtnContent.classList.remove("hidden");
+
+			resetBtnContent.addEventListener("click", function () {
+				location.reload();
+			});
 
 			let cardBackImage = [
 				{ src: "/images/1.png", value: 1 },
@@ -103,12 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 					if (img1Value === img2Value) {
 						// Añadir la clase 'matched' a los elementos 'li' con la clase 'back'
-						flippedCards[0]
-							.querySelector(".back")
-							.classList.add("shadow-inset-center");
-						flippedCards[1]
-							.querySelector(".back")
-							.classList.add("shadow-inset-center");
+						flippedCards[0].querySelector(".back").classList.add("matched");
+						flippedCards[1].querySelector(".back").classList.add("matched");
 						flippedCards = [];
 						counters.incrementarIntentos();
 					} else {
