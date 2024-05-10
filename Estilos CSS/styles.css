@@ -120,7 +120,6 @@ header {
 
 h1#title {
   width: 100%;
-
   color: rgb(97, 168, 164);
   font-size: 3rem;
   font-family: var(--title-font-family);
@@ -252,7 +251,6 @@ main {
   gap: 0.5rem;
   border: 1px solid black;
   border-radius: 1rem;
-  background-size: 200px;
   background: linear-gradient(var(--main-color2), var(--main-color));
 }
 
@@ -389,19 +387,19 @@ footer {
   }
 
   25% {
-    color: rgb(50, 83, 114);
+    color: var(--main-color);
   }
 
   50% {
-    color: rgb(59, 59, 59);
+    color: var(--main-color2);
   }
 
   75% {
-    color: rgb(202, 202, 181);
+    color: var(--card-background-color2);
   }
 
   100% {
-    color: rgb(249, 165, 199);
+    color: var(--card-background-color);
   }
 
   /*Otra vez amarillo*/
@@ -411,5 +409,77 @@ footer {
   #resetBtn {
     bottom: 2%;
     right: 4.3%;
+  }
+
+  h1#title {
+    font-size: 6rem;
+  }
+
+  input[type="text"]#user {
+    font-size: 2rem;
+    width: 400px;
+    height: 50px;
+  }
+
+  button#startGame {
+    font-size: 2rem;
+  }
+
+  main {
+    max-height: 900px;
+    max-width: 750px;
+    height: 100vh;
+  }
+
+  .front img {
+    padding: 1.2rem;
+  }
+
+  .card {
+    height: 150px;
+    width: 140px;
+  }
+
+  #divUser {
+    font-size: 1rem;
+    top: 1%;
+  }
+
+  #divIntentos {
+    font-size: 1.5rem;
+    top: 1%;
+  }
+
+  #divTextContador {
+    font-size: 1.5rem;
+    top: 8%;
+  }
+
+  #divFallos {
+    font-size: 1.5rem;
+    top: 8%;
+  }
+
+  #resetBtn {
+    font-size: 1.7rem;
+  }
+
+  p#copyright {
+    font-size: 1.5rem;
+  }
+
+  #gracias {
+    left: 28%;
+    font-size: 2rem;
+  }
+
+  h3#h3Resultado {
+    font-size: 2rem;
+    left: 13%;
+  }
+
+  #btnGameAgain {
+    font-size: 1.5rem;
+    right: 33%;
   }
 }

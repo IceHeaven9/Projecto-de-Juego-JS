@@ -17,6 +17,7 @@ const resetBtnController2 = document.getElementById("resetBtn");
 const h3ResultadoContent = document.getElementById("h3Resultado");
 
 cardBackImage = shuffleCards(cardBackImage.concat(cardBackImage));
+
 //funcion para mezclar las tarjetas
 function shuffleCards(cardBackImage) {
 	return cardBackImage.sort(() => Math.random() - 0.5);
@@ -94,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		counters.reset();
 		container.innerHTML = "";
 		divResultadoJuegoContent.classList.add("hidden");
+		matchedCards = 0;
 		initializeGame();
 	}
 
@@ -174,9 +176,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Funcion boton de volver a jugar
 	const btnGameAgainContent = document.getElementById("btnGameAgain");
 	btnGameAgainContent.addEventListener("click", resetGame);
+
 	// Funcion para que cuando matchedCards sea igual a 8, se muestre el div con el resultado del juego
 	let matchedCards = 0;
-	function checkMatchedCards() {
+	async function checkMatchedCards() {
+		// Esperar a que todas las demás tareas síncronas hayan terminado
+		await new Promise((resolve) => setTimeout(resolve, 0));
+
 		if (matchedCards === 8) {
 			divResultadoJuegoContent.classList.remove("hidden");
 		}
