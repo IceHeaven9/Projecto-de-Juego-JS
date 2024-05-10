@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	function resetGame() {
 		counters.reset();
 		container.innerHTML = "";
+		divResultadoJuegoContent.classList.add("hidden");
 		initializeGame();
 	}
 
@@ -173,7 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Funcion boton de volver a jugar
 	const btnGameAgainContent = document.getElementById("btnGameAgain");
 	btnGameAgainContent.addEventListener("click", resetGame);
-
 	// Funcion para que cuando matchedCards sea igual a 8, se muestre el div con el resultado del juego
 	let matchedCards = 0;
 	function checkMatchedCards() {

@@ -137,7 +137,9 @@ function resetGame() {
 const resetBtnController = document.getElementById("resetBtn");
 // Añadir el controlador de eventos al botón de reset
 resetBtnController.addEventListener("click", resetGame);
-//
+const btnGameAgainContent = document.getElementById("btnGameAgain");
+btnGameAgainContent.addEventListener("click", resetGame);
+
 // FUNCION PARA CREAR LAS TARJETAS
 //
 
