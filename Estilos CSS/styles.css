@@ -1,19 +1,40 @@
 /* HEADER */
 :root {
   --text-font-family: "Poetsen One", "Arial", "sans-serif";
+  --title-font-family: "Dancing Script", "Arial", "sans-serif";
+  --button-hover-color: rgb(33, 169, 255);
+  --main-color: rgb(182, 149, 192);
+  --main-color2: rgb(218, 201, 223);
+  --div-background-color: rgb(234, 234, 236);
 }
 
-#divUser {
-  font-family: "Poetsen One";
+#divIntentos {
   position: absolute;
-  top: 15.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 2%;
+  right: 4%;
+  font-family: var(--text-font-family);
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 5px;
-  background-color: #eaeaec;
+  background-color: var(--div-background-color);
+  box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  font-size: 1rem;
+  white-space: nowrap;
+  color: #4b4e50;
+}
+
+#divUser {
+  position: absolute;
+  top: 2%;
+  left: 4%;
+  font-family: var(--text-font-family);
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  background-color: var(--div-background-color);
   box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
   border-radius: 20px;
   font-size: 1rem;
@@ -22,14 +43,12 @@
 }
 
 #divTextContador {
-  z-index: 1;
   position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 11%;
+  left: 4%;
   padding: 5px;
   border-radius: 5px;
-  background-color: #eaeaec;
+  background-color: var(--div-background-color);
   box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
   border-radius: 20px;
   font-size: 1rem;
@@ -42,31 +61,32 @@
   text-align: left;
 }
 
-/* #divContador {
-  z-index: 2;
+
+#divFallos {
   position: absolute;
-  top: 25.5%;
-  left: 62%;
-  transform: translate(-50%, -50%);
-  background-color: transparent;
+  top: 11%;
+  right: 4%;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--div-background-color);
+  box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 1);
   border-radius: 20px;
   font-size: 1rem;
-  font-family: "Poetsen One";
   white-space: nowrap;
+  font-family: "Poetsen One";
+  font-weight: bolder;
   color: #4b4e50;
-} */
-
-header.centered {
-  text-align: center;
-  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
 }
+
 
 h1#title {
   color: #191919;
   font-size: 3rem;
-  font-family: "Dancing Script";
+  font-family: var(--title-font-family);
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 2);
-
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
@@ -79,11 +99,11 @@ form.inputBox {
 }
 
 input[type="text"]#user {
-  font-family: "Poetsen One";
+  font-family: var(--text-font-family);
   font-style: italic;
   font-weight: bolder;
   color: #5e5e5e;
-  background-color: #eaeaec;
+  background-color: var(--div-background-color);
   font-size: 1rem;
   padding: 10px;
   border: none;
@@ -98,12 +118,12 @@ input[type="text"]#user {
 
 button#startGame,
 button[type="reset"] {
-  font-family: "Poetsen One";
+  font-family: var(--text-font-family);
   font-weight: bolder;
   margin-top: 1rem;
   background-color: #5e5e5e;
 
-  color: #eaeaec;
+  color: var(--div-background-color);
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -115,8 +135,7 @@ button[type="reset"] {
 
 button#startGame:hover,
 button[type="reset"]:hover {
-  background-color: #45a049;
-  /* Un verde ligeramente más oscuro */
+  background-color: var(--button-hover-color);
   transform: translateY(-2px);
 }
 
@@ -133,8 +152,8 @@ body {
 }
 
 body {
-  font-family: "Poetsen One";
-  background-color: #f4f4f9;
+  font-family: var(--text-font-family);
+  background-color: var(--div-background-color);
   color: #333;
   display: flex;
   place-items: center;
@@ -149,6 +168,8 @@ body {
 /* MAIN */
 
 main {
+  box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
+  position: relative;
   max-height: 720px;
   max-width: 400px;
   min-width: 320px;
@@ -167,15 +188,15 @@ main {
   gap: 0.5rem;
   border: 1px solid black;
   border-radius: 1rem;
-  background: linear-gradient(rgb(206, 255, 244), rgb(96, 223, 255));
+  background-size: 200px;
+  background: linear-gradient(var(--main-color2), var(--main-color));
 }
 
 .container {
   margin-top: 6rem;
-
   height: 100%;
   width: 100%;
-  border: 5px solid rgb(255, 231, 195);
+  border: 5px solid #f68c70;
   background-color: #070808a9;
   padding: 1rem;
   border-radius: 1rem;
@@ -218,15 +239,12 @@ article ul {
 
 .back {
   z-index: 0;
-  position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background-color: black;
-  background: linear-gradient(steelblue, lightsteelblue);
+  background: linear-gradient(rgb(249, 219, 74), rgb(240, 238, 234));
   transform: rotateY(180deg);
 }
 
@@ -235,7 +253,6 @@ article ul {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: linear-gradient(black, gray);
   display: grid;
   place-content: center;
   font-size: 8rem;
@@ -245,18 +262,16 @@ article ul {
 
 .front {
   z-index: 1;
-  position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background-color: black;
+  background: linear-gradient(black, gray);
 }
 
 p#copyright {
-  font-family: "Poetsen One";
+  font-family: var(--text-font-family);
   text-align: center;
   color: #0c0c0c;
   font-size: 0.8rem;
@@ -270,4 +285,18 @@ footer {
 
 .hidden {
   display: none;
+}
+
+.shadow-inset-center {
+  animation: shadow-inset-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes shadow-inset-center {
+  0% {
+    box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+  }
 }
