@@ -139,7 +139,7 @@ window.onload = function () {
 		back.classList.add("back");
 
 		// Añade el atributo src a la imagen
-		img.src = "/images/Logo_HAB_PNG.png";
+		img.src = "/images/Logotipo-HACK-A-BOSS_white.png";
 		img.alt = "logo hack a boss";
 
 		// Añade la imagen al frente de la tarjeta

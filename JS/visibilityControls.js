@@ -47,8 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			cardBackImage = cardBackImage.concat(cardBackImage);
 			// Mezclar las tarjetas
-			const shuffleCards = (cardBackImage) =>
-				cardBackImage.sort(() => Math.random() - 0.5);
+			function shuffleCards(cardBackImage) {
+				return cardBackImage.sort(() => Math.random() - 0.5);
+			}
 			shuffleCards(cardBackImage);
 
 			// Limpiar el contenedor de tarjetas antes de agregar nuevas tarjetas
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 				// Asignar imagen al frente
 				const frontImg = document.createElement("img");
-				frontImg.src = "/images/Logo_HAB_PNG.png";
+				frontImg.src = "/images/Logotipo-HACK-A-BOSS_white.png";
 				frontImg.alt = "logo hack a boss";
 				front.appendChild(frontImg);
 
@@ -134,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Create an object to manage counters
-function contadores(divIntentosContent, divFallosContent) {
+export function contadores(divIntentosContent, divFallosContent) {
 	return {
 		intentos: 0,
 		fallos: 0,
