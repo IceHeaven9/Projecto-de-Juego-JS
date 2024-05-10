@@ -3,8 +3,8 @@
   --text-font-family: "Poetsen One", "Arial", "sans-serif";
   --title-font-family: "Oleo Script", "Arial", "sans-serif";
   --button-hover-color: rgb(33, 169, 255);
-  --main-color: rgb(50, 83, 114);
-  --main-color2: rgb(202, 202, 181);
+  --main-color: rgb(58, 132, 171);
+  --main-color2: rgb(121, 205, 116);
   --div-background-color: rgb(234, 234, 236);
   --card-background-color: rgb(249, 165, 199);
   --card-background-color2: rgb(217, 221, 194);
@@ -104,6 +104,7 @@
   top: 10%;
   left: 19%;
 }
+
 #h3Resultado {
   position: absolute;
   left: 8%;
@@ -220,7 +221,7 @@ body {
   color: #333;
   display: flex;
   place-items: center;
-  background-image: url("/images/fondo\ de\ emojis.jpg");
+  background-image: url("/images/fondo\ de\ alienigenas.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -321,10 +322,8 @@ li {
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background-color: black;
-  background: linear-gradient(
-    var(--card-background-color),
-    var(--card-background-color2)
-  );
+  background: linear-gradient(var(--card-background-color),
+      var(--card-background-color2));
   transform: rotateY(180deg);
 }
 
@@ -335,6 +334,7 @@ li {
   font-size: 1.6rem;
   border-radius: 0.5rem;
   background: linear-gradient(rgb(20, 15, 15), rgb(39, 39, 39));
+
 }
 
 .front img {
@@ -343,6 +343,7 @@ li {
   box-sizing: border-box;
   padding: 0.6rem;
   width: 100%;
+  backface-visibility: hidden;
 }
 
 .back img {
