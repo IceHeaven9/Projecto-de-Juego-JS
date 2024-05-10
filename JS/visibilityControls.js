@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const divContadorContent = document.getElementById("divContador");
   const divTextContadorContent = document.getElementById("divTextContador");
   const divIntentosContent = document.getElementById("divIntentos");
+  const divFallosContent = document.getElementById("divFallos");
   const resetBtnContent = document.getElementById("resetBtn");
+  const counters = contadores(divIntentosContent, divFallosContent);
 
   gameContent.classList.add("hidden");
   divUserContent.classList.add("hidden");
@@ -121,8 +123,8 @@ document.addEventListener("DOMContentLoaded", function () {
               flippedCards[0].classList.remove("flipped");
               flippedCards[1].classList.remove("flipped");
               flippedCards = [];
-              counters.incrementarIntentos();
               counters.incrementarFallos();
+              counters.incrementarIntentos();
             }, 500);
           }
         }
@@ -134,19 +136,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Create an object to manage counters
-let counters = {
-  intentos: 0,
-  fallos: 0,
-
-  // Function to increment intentos counter
-  incrementarIntentos: function () {
-    this.intentos++;
-    divIntentos.textContent = `Intentos: ${this.intentos}`;
-  },
-
-  // Function to increment fallos counter
-  incrementarFallos: function () {
-    this.fallos++;
-    divFallos.textContent = `Fallos: ${this.fallos}`;
-  },
-};
+function contadores(divIntentosContent, divFallosContent) {
+  return {
+    intentos: 0,
+    fallos: 0,
+    incrementarIntentos: function () {
+      this.intentos++;
+      divIntentosContent.textContent = `Intentos: ${this.intentos}`;
+    },
+    incrementarFallos: function () {
+      this.fallos++;
+      divFallosContent.textContent = `Fallos: ${this.fallos}`;
+    },
+  };
+}
