@@ -187,7 +187,7 @@ window.onload = function () {
 	}
 };
 
-//  IceHeaven, Ivan Sanchez, Marc Ollé, Santiago Cadavid.
+//  IceHeaven, Ivan Sanchez, Marc Ollé, Santiago Cadavid..
 //         ─────▄██▀▀▀▀▀▀▀▀▀▀▀▀▀██▄─────
 //         ────███───────────────███────
 //         ───███─────────────────███───
