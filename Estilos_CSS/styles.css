@@ -4,7 +4,7 @@
   --title-font-family: "Oleo Script", "Arial", "sans-serif";
   --button-hover-color: rgb(33, 169, 255);
   --main-color: rgb(58, 132, 171);
-  --main-color2: rgb(221, 159, 144);
+  --main-color2: rgb(148, 120, 178);
   --div-background-color: rgb(234, 234, 236);
   --card-background-color: rgb(249, 165, 199);
   --card-background-color2: rgb(217, 221, 194);
@@ -176,6 +176,7 @@ input[type="text"]#user {
   width: 200px;
   outline: none;
   text-align: center;
+  animation: anim2 5s infinite;
 }
 
 button#startGame,
@@ -193,6 +194,10 @@ button[type="reset"] {
   border-radius: 20px;
   box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
   transition: background-color 0.3s, transform 0.3s;
+}
+
+button#startGame {
+  animation: anim2 5s infinite;
 }
 
 button#startGame:hover,
@@ -343,10 +348,8 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--card-background-color),
-    var(--card-background-color2)
-  );
+  background: linear-gradient(var(--card-background-color),
+      var(--card-background-color2));
   transform: rotateY(180deg);
 }
 
@@ -356,10 +359,8 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--front-card-background-color),
-    var(--front-card-background-color2)
-  );
+  background: linear-gradient(var(--front-card-background-color),
+      var(--front-card-background-color2));
 }
 
 .front img {
@@ -439,6 +440,20 @@ p#copyright {
 
   100% {
     color: var(--card-background-color);
+  }
+}
+
+@keyframes anim2 {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
