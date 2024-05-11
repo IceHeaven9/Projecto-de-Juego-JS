@@ -57,6 +57,11 @@ const h3Resultado = document.createElement("h3");
 h3Resultado.id = "h3Resultado";
 divResultado.appendChild(h3Resultado);
 
+// Creamos un h3 para la nota final del juego
+const h3NotaFinal = document.createElement("h3");
+h3NotaFinal.id = "h3NotaFinal";
+divResultado.appendChild(h3NotaFinal);
+
 // Creamos un botón para reiniciar el juego
 const btnGameAgain = document.createElement("button");
 btnGameAgain.id = "btnGameAgain";

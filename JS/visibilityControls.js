@@ -17,15 +17,26 @@ const divIntentosContent = document.getElementById("divIntentos");
 const divFallosContent = document.getElementById("divFallos");
 const resetBtnController2 = document.getElementById("resetBtn");
 const h3ResultadoContent = document.getElementById("h3Resultado");
+const h3NotaFinalContent = document.getElementById("h3NotaFinal");
 
 // Mezclar las tarjetas
 cardBackImage = shuffleCards(cardBackImage.concat(cardBackImage));
 
-//Funcion para mezclar las tarjetas
+// Funcion para mezclar las tarjetas
 function shuffleCards(cardBackImage) {
   return cardBackImage.sort(() => Math.random() - 0.5);
 }
 
+// Funcion para calcular la nota final del usuario sobre 10
+function calcularNota(intentos) {
+  if (intentos === 8) {
+    return 10;
+  } else {
+    return Math.max(0, 80 / intentos);
+  }
+}
+
+// Funcion para los contadores de intentos y fallos
 function contadores(divIntentosContent, divFallosContent) {
   return {
     intentos: 0,
@@ -33,7 +44,12 @@ function contadores(divIntentosContent, divFallosContent) {
     incrementarIntentos: function () {
       this.intentos++;
       divIntentosContent.textContent = `Intentos: ${this.intentos}`;
+      let nota = calcularNota(this.intentos);
+      let claseColor = this.determinarClaseColor(nota);
       h3ResultadoContent.textContent = `Lo conseguiste en: ${this.intentos} intentos!`;
+      h3NotaFinalContent.innerHTML = `Tu nota final es un: <span class=${claseColor}>${nota.toFixed(
+        1
+      )}</span> / 10!`;
     },
     incrementarFallos: function () {
       this.fallos++;
@@ -52,6 +68,15 @@ function contadores(divIntentosContent, divFallosContent) {
       // Convertir el Set de nuevo a un array
       cardBackImage = Array.from(uniqueImages, (image) => JSON.parse(image));
       cardBackImage = shuffleCards(cardBackImage.concat(cardBackImage));
+    },
+    determinarClaseColor: function (nota) {
+      if (nota < 5) {
+        return "nota-baja";
+      } else if (nota > 9) {
+        return "nota-alta";
+      } else {
+        return "nota-media";
+      }
     },
   };
 }
