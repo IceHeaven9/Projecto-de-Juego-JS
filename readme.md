@@ -19,11 +19,11 @@ Y8,             d8""""""""8b    88    `8b    88         8P          `8b
  Y8a.    .a8P  d8'        `8b   88     `8b   88      .a8P   Y8a     a8P
   `"Y8888Y"'  d8'          `8b  88      `8b  88888888Y"'     "Y88888P"   -->
 
-# Juego emparejar cartas
+# Juego de emparejar cartas
 
 Un juego emocionante y desafiante que te desafía a encontrar parejas de cartas con el mismo emoji.
 
-## Características
+# Características
 
 - **16 cartas**: 8 parejas de cartas con un emoji único en cada una.
 
@@ -40,9 +40,9 @@ Un juego emocionante y desafiante que te desafía a encontrar parejas de cartas 
 -**Conteo de puntuacion**: Cuando todas las cartas son descubiertas el juego muestra un pop-up con la puntuacion
 de la partida siendo el resultado entre 0 y 10, y tambien muestra el numero de intentos en el que has completado la partida.
 
-- **Objetivo**: Minimizar el número de intentos para obtener la puntuación más baja posible.
+- **Objetivo**: Minimizar el número de intentos para obtener la puntuación más alta posible.
 
-## Cómo jugar
+# Cómo jugar
 
 1. Al abrir la web ingresa un nombre de usuario o tu propio nombre y pulsa el boton de iniciar juego.
 2. Intenta memorizar las cartas en los 10 segundos que te da el temporizador.
@@ -50,11 +50,11 @@ de la partida siendo el resultado entre 0 y 10, y tambien muestra el numero de i
 4. Intenta encontrar parejas de cartas con el mismo emoji.
 5. Continúa hasta que todas las parejas estén descubiertas.
 
-## Resultados
+# Resultados
 
 - **Puntuación**: El número de intentos realizados.
-- **Mejor puntuación**: La mejor puntuacion se realiza en 8 intentos y equivale a 10/10
+- **Mejor puntuación**: La mejor puntuacion se realiza en 8 intentos y equivale a 10/10.
 
-## Contribuciones
+# Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para sugerencias de mejora o nuevas características.
