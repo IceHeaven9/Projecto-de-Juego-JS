@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     counters.reset();
     container.innerHTML = "";
     divResultadoJuegoContent.classList.add("hidden");
+    gameContent.classList.remove("parteOculta");
     matchedCards = 0;
     initializeGame();
   }
@@ -223,6 +224,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (matchedCards === 8) {
       divResultadoJuegoContent.classList.remove("hidden");
+      gameContent.classList.add("parteOculta");
+      divResultadoJuegoContent.classList.add("parteVisible");
     }
   }
 });
