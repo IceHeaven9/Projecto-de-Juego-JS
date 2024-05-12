@@ -1,6 +1,5 @@
 /* HEADER */
 :root {
-
   --text-font-family: "Poetsen One", "Arial", "sans-serif";
   --title-font-family: "Oleo Script", "Arial", "sans-serif";
   --button-hover-color: rgb(33, 169, 255);
@@ -16,7 +15,6 @@
   --nota-baja-color: rgb(203, 42, 73);
   --nota-media-color: rgb(248, 228, 75);
   --nota-alta-color: rgb(59, 142, 237);
-
 }
 
 #divIntentos {
@@ -100,7 +98,7 @@
   overflow: auto;
   width: 80%;
   height: 35%;
-  min-width: 300px;
+  min-width: 310px;
   border: 1px solid var(--front-card-background-color);
   border-radius: 1rem;
   background: linear-gradient(var(--main-color2), var(--main-color));
@@ -221,8 +219,9 @@ button[type="reset"]:hover {
 
 #btnGameAgain {
   position: absolute;
+  max-width: 50%;
   bottom: 10%;
-  right: 30%;
+  left: 5%;
   font-family: var(--text-font-family);
   font-weight: bolder;
   margin-top: 1rem;
@@ -235,6 +234,31 @@ button[type="reset"]:hover {
   border-radius: 20px;
   box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
   transition: background-color 0.3s, transform 0.3s;
+}
+
+#btnExitGame {
+  position: absolute;
+  max-width: 50%;
+  bottom: 10%;
+  right: 5%;
+  font-family: var(--text-font-family);
+  font-weight: bolder;
+  margin-top: 1rem;
+  background-color: var(--buttons-background-color);
+  color: var(--div-background-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#btnGameAgain:hover,
+#btnExitGame:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-2px);
 }
 
 /* BODY */
@@ -350,8 +374,10 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(var(--card-background-color),
-      var(--card-background-color2));
+  background: linear-gradient(
+    var(--card-background-color),
+    var(--card-background-color2)
+  );
   transform: rotateY(180deg);
 }
 
@@ -361,8 +387,10 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(var(--front-card-background-color),
-      var(--front-card-background-color2));
+  background: linear-gradient(
+    var(--front-card-background-color),
+    var(--front-card-background-color2)
+  );
 }
 
 .front img {
@@ -533,8 +561,11 @@ p#copyright {
   }
 
   #btnGameAgain {
-    font-size: 1.5rem;
-    right: 30.5%;
+    font-size: 1rem;
+  }
+
+  #btnExitGame {
+    font-size: 1rem;
   }
 
   #h3NotaFinal {
@@ -618,7 +649,10 @@ p#copyright {
 
   #btnGameAgain {
     font-size: 1.5rem;
-    right: 34.5%;
+  }
+
+  #btnExitGame {
+    font-size: 1.5rem;
   }
 
   #h3NotaFinal {
