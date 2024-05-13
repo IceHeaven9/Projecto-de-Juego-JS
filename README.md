@@ -58,5 +58,3 @@ de la partida siendo el resultado entre 0 y 10, y tambien muestra el numero de i
 # Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre un issue o un pull request para sugerencias de mejora o nuevas características.
-
-prueba
