@@ -227,5 +227,13 @@ document.addEventListener("DOMContentLoaded", function () {
       gameContent.classList.add("parteOculta");
       divResultadoJuegoContent.classList.add("parteVisible");
     }
+    //save the score on local storage  and do a ranking with the top 5
+    let user = userInput.value;
+    let score = counters.intentos;
+    let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
+    ranking.push({ user, score });
+    ranking.sort((a, b) => a.score - b.score);
+    ranking = ranking.slice(0, 5);
+    localStorage.setItem("ranking", JSON.stringify(ranking));
   }
 });
