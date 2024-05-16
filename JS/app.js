@@ -62,12 +62,27 @@ const h3NotaFinal = document.createElement("h3");
 h3NotaFinal.id = "h3NotaFinal";
 divResultado.appendChild(h3NotaFinal);
 
+// Creamos un div para el ranking
 const divRanking = document.createElement("div");
 divRanking.id = "divRanking";
 document.body.appendChild(divRanking);
 
+// Creamos un botón para desbloquear el ranking
+const btnUnlockRanking = document.createElement("button");
+btnUnlockRanking.id = "btnUnlockRanking";
+btnUnlockRanking.textContent = "⬇️ Ranking ⬇️";
+divRanking.appendChild(btnUnlockRanking);
+
+// Creamos un h3 para el ranking
+const rankingH3 = document.createElement("h3");
+rankingH3.id = "rankingH3";
+rankingH3.textContent = "Mejor Puntuación:";
+divRanking.appendChild(rankingH3);
+
+// Creamos un p para el ranking
 const rankingP = document.createElement("p");
 rankingP.id = "rankingP";
+rankingP.textContent = "userPrueba: notaPrueba";
 divRanking.appendChild(rankingP);
 
 // Creamos un botón para reiniciar el juego
@@ -84,21 +99,21 @@ divResultado.appendChild(btnExitGame);
 
 //Funcion para que H2 se muestre el valor del input user y siempre con la primera letra en mayúscula
 user.addEventListener("input", function () {
-	const maxLength = 15;
-	const userValue = user.value;
-	if (userValue.length > maxLength) {
-		user.value = userValue.slice(0, maxLength);
-	}
+  const maxLength = 15;
+  const userValue = user.value;
+  if (userValue.length > maxLength) {
+    user.value = userValue.slice(0, maxLength);
+  }
 
-	h2.textContent =
-		"Suerte, " +
-		user.value
-			.split(" ")
-			.map(function (word) {
-				return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-			})
-			.join(" ") +
-		"!";
+  h2.textContent =
+    "Suerte, " +
+    user.value
+      .split(" ")
+      .map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(" ") +
+    "!";
 });
 
 // Funcion para activar contador y ocultarlo al finalizar
@@ -107,48 +122,48 @@ let contador;
 let intervalId;
 
 function startTimer() {
-	contador = 10;
-	let tiempoInicio = Date.now();
-	let tiempoFinal = tiempoInicio + contador * 1000;
-	intervalId = setInterval(() => {
-		let tiempoRestante = tiempoFinal - Date.now();
-		contador = Math.round(tiempoRestante / 1000);
-		divTextContador.textContent = `Tiempo restante: ${contador} seg`;
-		contador--;
+  contador = 10;
+  let tiempoInicio = Date.now();
+  let tiempoFinal = tiempoInicio + contador * 1000;
+  intervalId = setInterval(() => {
+    let tiempoRestante = tiempoFinal - Date.now();
+    contador = Math.round(tiempoRestante / 1000);
+    divTextContador.textContent = `Tiempo restante: ${contador} seg`;
+    contador--;
 
-		const tarjetas = document.querySelectorAll(".card");
-		tarjetas.forEach((card) => {
-			card.classList.add("flipped");
-		});
+    const tarjetas = document.querySelectorAll(".card");
+    tarjetas.forEach((card) => {
+      card.classList.add("flipped");
+    });
 
-		const matchedCards = document.querySelectorAll(".back.matched");
-		matchedCards.forEach((card) => {
-			card.classList.remove("matched");
-		});
+    const matchedCards = document.querySelectorAll(".back.matched");
+    matchedCards.forEach((card) => {
+      card.classList.remove("matched");
+    });
 
-		if (contador < 0) {
-			clearInterval(intervalId);
-			h3Contador.textContent = "";
-			divTextContador.textContent = "";
-			divTextContador.textContent = "Comienza el juego!!";
+    if (contador < 0) {
+      clearInterval(intervalId);
+      h3Contador.textContent = "";
+      divTextContador.textContent = "";
+      divTextContador.textContent = "Comienza el juego!!";
 
-			const flippedCards = document.querySelectorAll(".card.flipped");
+      const flippedCards = document.querySelectorAll(".card.flipped");
 
-			for (const card of flippedCards) {
-				card.classList.remove("flipped");
-			}
-		}
-	}, 100);
+      for (const card of flippedCards) {
+        card.classList.remove("flipped");
+      }
+    }
+  }, 100);
 }
 
 startGame.addEventListener("click", startTimer);
 
 function resetGame() {
-	// Detener el temporizador actual
-	clearInterval(intervalId);
+  // Detener el temporizador actual
+  clearInterval(intervalId);
 
-	// Reiniciar el temporizador
-	startTimer();
+  // Reiniciar el temporizador
+  startTimer();
 }
 const resetBtnController = document.getElementById("resetBtn");
 // Añadir el controlador de eventos al botón de reset
@@ -158,47 +173,47 @@ btnGameAgainContent.addEventListener("click", resetGame);
 
 // Funcion para crear las tarjetas
 window.onload = function () {
-	// Restablecer el valor del input "user" a null
-	const user = document.getElementById("user");
-	user.value = null;
-	// Obtiene el contenedor donde queremos agregar las tarjetas
-	const container = document.querySelector(".container");
+  // Restablecer el valor del input "user" a null
+  const user = document.getElementById("user");
+  user.value = null;
+  // Obtiene el contenedor donde queremos agregar las tarjetas
+  const container = document.querySelector(".container");
 
-	// Cantidad de tarjetas que quieres crear
-	const numberOfCards = 16;
+  // Cantidad de tarjetas que quieres crear
+  const numberOfCards = 16;
 
-	// Crea las tarjetas
-	for (let i = 0; i < numberOfCards; i++) {
-		// Crea los elementos necesarios
-		const card = document.createElement("article");
-		const content = document.createElement("ul");
-		const front = document.createElement("li");
-		const back = document.createElement("li");
-		const img = document.createElement("img");
+  // Crea las tarjetas
+  for (let i = 0; i < numberOfCards; i++) {
+    // Crea los elementos necesarios
+    const card = document.createElement("article");
+    const content = document.createElement("ul");
+    const front = document.createElement("li");
+    const back = document.createElement("li");
+    const img = document.createElement("img");
 
-		// Añade las clases necesarias
-		card.classList.add("card");
-		content.classList.add("content");
-		front.classList.add("front");
-		back.classList.add("back");
+    // Añade las clases necesarias
+    card.classList.add("card");
+    content.classList.add("content");
+    front.classList.add("front");
+    back.classList.add("back");
 
-		// Añade el atributo src a la imagen
-		img.src = "../images/Logotipo-HACK-A-BOSS_white.png";
-		img.alt = "logo hack a boss";
+    // Añade el atributo src a la imagen
+    img.src = "../images/Logotipo-HACK-A-BOSS_white.png";
+    img.alt = "logo hack a boss";
 
-		// Añade la imagen al frente de la tarjeta
-		front.appendChild(img);
+    // Añade la imagen al frente de la tarjeta
+    front.appendChild(img);
 
-		// Añade el frente y el dorso al contenido de la tarjeta
-		content.appendChild(front);
-		content.appendChild(back);
+    // Añade el frente y el dorso al contenido de la tarjeta
+    content.appendChild(front);
+    content.appendChild(back);
 
-		// Añade el contenido a la tarjeta
-		card.appendChild(content);
+    // Añade el contenido a la tarjeta
+    card.appendChild(content);
 
-		// Añade la tarjeta al contenedor
-		container.appendChild(card);
-	}
+    // Añade la tarjeta al contenedor
+    container.appendChild(card);
+  }
 };
 
 //  IceHeaven, Ivan Sanchez, Marc Ollé, Santiago Cadavid..

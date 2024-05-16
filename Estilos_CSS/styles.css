@@ -104,18 +104,19 @@ body {
   background-color: var(--div-background-color);
   color: #333;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   place-items: center;
   background-image: url("../images/fondo\ de\ alienigenas.jpg");
   background-size: cover;
   background-position: center;
-  display: flex;
-  justify-content: center;
   font-weight: bold;
   width: 100%;
   height: 100%;
 }
 
-/* MAIN */
+/* Main */
 
 main {
   box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
@@ -124,15 +125,10 @@ main {
   max-height: 560px;
   min-width: 320px;
   max-width: 400px;
-  flex-grow: 1;
-  overflow: auto;
-  height: 65vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
   padding: 1rem 1rem 0rem 1rem;
   margin: 0rem 0.5rem 0rem 0.5rem;
   gap: 0.5rem;
@@ -207,8 +203,10 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(var(--card-background-color),
-      var(--card-background-color2));
+  background: linear-gradient(
+    var(--card-background-color),
+    var(--card-background-color2)
+  );
   transform: rotateY(180deg);
 }
 
@@ -218,8 +216,10 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(var(--front-card-background-color),
-      var(--front-card-background-color2));
+  background: linear-gradient(
+    var(--front-card-background-color),
+    var(--front-card-background-color2)
+  );
 }
 
 .front img {
@@ -239,7 +239,7 @@ li {
   padding: 0.5rem;
 }
 
-/* FOOTER */
+/* Footer */
 
 footer {
   width: 100%;
@@ -252,6 +252,34 @@ p#copyright {
   font-size: 0.6rem;
   display: flex;
   justify-content: center;
+}
+
+/* RANKING */
+
+#divRanking {
+  margin-top: 1rem;
+  min-width: 220px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  background: linear-gradient(var(--main-color2), var(--main-color));
+  box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
+}
+
+#btnUnlockRanking {
+  font-family: var(--text-font-family);
+  padding: 6px 15px;
+  font-size: 0.8rem;
+  background-color: var(--buttons-background-color);
+  color: var(--div-background-color);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 /* CLASES COMPARTIDAS */
@@ -524,8 +552,6 @@ p#copyright {
 /* MEDIA QUERY */
 
 @media screen and (min-width: 600px) {
-
-
   h1#title {
     font-size: 5rem;
   }
@@ -621,8 +647,6 @@ p#copyright {
 }
 
 @media screen and (min-width: 800px) {
-
-
   h1#title {
     font-size: 6rem;
   }
