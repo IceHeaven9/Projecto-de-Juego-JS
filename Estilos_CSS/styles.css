@@ -107,7 +107,7 @@ body {
   color: #333;
   display: flex;
   place-items: center;
-  background-image: url("/images/fondo\ de\ alienigenas.jpg");
+  background-image: url("../images/fondo\ de\ alienigenas.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
