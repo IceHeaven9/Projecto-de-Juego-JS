@@ -174,15 +174,9 @@ window.onload = function () {
 		front.classList.add("front");
 		back.classList.add("back");
 
-<<<<<<< HEAD
 		// Añade el atributo src a la imagen
 		img.src = "../images/Logotipo-HACK-A-BOSS_white.png";
 		img.alt = "logo hack a boss";
-=======
-    // Añade el atributo src a la imagen
-    img.src = "./images/Logotipo-HACK-A-BOSS_white.png";
-    img.alt = "logo hack a boss";
->>>>>>> 64971ddc4ece2b455db7a611af53700f0e4f4ced
 
 		// Añade la imagen al frente de la tarjeta
 		front.appendChild(img);
