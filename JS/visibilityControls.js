@@ -2,14 +2,14 @@
 
 //Array de para el .back de las tarjetas, con su valor para comparar
 let cardBackImage = [
-  { src: "/images/1.png", value: 1 },
-  { src: "/images/2.png", value: 2 },
-  { src: "/images/3.png", value: 3 },
-  { src: "/images/4.png", value: 4 },
-  { src: "/images/5.png", value: 5 },
-  { src: "/images/6.png", value: 6 },
-  { src: "/images/7.png", value: 7 },
-  { src: "/images/8.png", value: 8 },
+  { src: "./images/1.png", value: 1 },
+  { src: "./images/2.png", value: 2 },
+  { src: "./images/3.png", value: 3 },
+  { src: "./images/4.png", value: 4 },
+  { src: "./images/5.png", value: 5 },
+  { src: "./images/6.png", value: 6 },
+  { src: "./images/7.png", value: 7 },
+  { src: "./images/8.png", value: 8 },
 ];
 
 //Declaramos las variables que vamos a utilizar

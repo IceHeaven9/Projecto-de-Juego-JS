@@ -142,7 +142,7 @@ main {
 
 .container {
   margin-top: 6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   height: 80%;
   width: 90%;
   border-radius: 1rem;
@@ -253,7 +253,9 @@ p#copyright {
   font-family: var(--text-font-family);
   text-align: left;
   color: var(--front-card-background-color);
-  font-size: 0.8rem;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* CLASES COMPARTIDAS */
@@ -578,7 +580,7 @@ p#copyright {
   }
 
   p#copyright {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   #gracias {
