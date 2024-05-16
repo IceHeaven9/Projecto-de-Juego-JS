@@ -45,10 +45,7 @@ function contadores(divIntentosContent, divFallosContent) {
 			this.intentos++;
 			divIntentosContent.textContent = `Intentos: ${this.intentos}`;
 			let nota = calcularNota(this.intentos);
-			let guardarNota = localStorage.setItem(
-				"nota",
-				Math.ceil(nota * 100) / 100
-			);
+			let guardarNota = localStorage.setItem("nota", nota.toFixed(1));
 
 			let claseColor = this.determinarClaseColor(nota);
 			h3ResultadoContent.textContent = `Lo conseguiste en: ${this.intentos} intentos!`;
@@ -221,11 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		location.reload();
 	});
 
-	const exitbtnContent = document.getElementById("exitbtn");
-	exitbtnContent.addEventListener("click", function () {
-		location.reload();
-	});
-
 	// Función para que cuando matchedCards sea igual a 8, se muestre el div con el resultado del juego
 	let matchedCards = 0;
 	async function checkMatchedCards() {
@@ -240,6 +232,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
+let user = userInput.value;
+const resultNota = localStorage.getItem("nota");
+const rankingPcontent = document.getElementById("rankingP");
+rankingPcontent.innerText = `${user}: ${resultNota}`;
 // let user = userInput.value;
 // let score = counters.intentos;
 // let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
