@@ -207,10 +207,8 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--card-background-color),
-    var(--card-background-color2)
-  );
+  background: linear-gradient(var(--card-background-color),
+      var(--card-background-color2));
   transform: rotateY(180deg);
 }
 
@@ -220,10 +218,8 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--front-card-background-color),
-    var(--front-card-background-color2)
-  );
+  background: linear-gradient(var(--front-card-background-color),
+      var(--front-card-background-color2));
 }
 
 .front img {
@@ -410,6 +406,17 @@ p#copyright {
   margin: 0;
 }
 
+#exitBtn {
+  position: absolute;
+  bottom: 2%;
+  left: 4.3%;
+  font-size: 0.8rem;
+  padding: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
+}
+
 #btnGameAgain {
   position: absolute;
   max-width: 50%;
@@ -517,10 +524,7 @@ p#copyright {
 /* MEDIA QUERY */
 
 @media screen and (min-width: 600px) {
-  #resetBtn {
-    bottom: 2%;
-    right: 4.3%;
-  }
+
 
   h1#title {
     font-size: 5rem;
@@ -541,6 +545,7 @@ p#copyright {
     max-width: 600px;
     height: 100vh;
   }
+
   .container {
     gap: 1.5rem;
     padding: 1.5rem;
@@ -577,6 +582,14 @@ p#copyright {
 
   #resetBtn {
     font-size: 1.7rem;
+    bottom: 2%;
+    right: 4.3%;
+  }
+
+  #exitBtn {
+    font-size: 1.7rem;
+    bottom: 2%;
+    left: 4.3%;
   }
 
   p#copyright {
@@ -608,10 +621,7 @@ p#copyright {
 }
 
 @media screen and (min-width: 800px) {
-  #resetBtn {
-    bottom: 2%;
-    right: 4.3%;
-  }
+
 
   h1#title {
     font-size: 6rem;
@@ -632,6 +642,7 @@ p#copyright {
     max-width: 750px;
     height: 100vh;
   }
+
   .container {
     gap: 1.5rem;
     padding: 1.5rem;
@@ -668,6 +679,14 @@ p#copyright {
 
   #resetBtn {
     font-size: 1.7rem;
+    bottom: 2%;
+    right: 4.3%;
+  }
+
+  #exitBtn {
+    font-size: 1.7rem;
+    bottom: 2%;
+    left: 4.3%;
   }
 
   p#copyright {

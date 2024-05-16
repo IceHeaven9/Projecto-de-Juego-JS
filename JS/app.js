@@ -62,6 +62,14 @@ const h3NotaFinal = document.createElement("h3");
 h3NotaFinal.id = "h3NotaFinal";
 divResultado.appendChild(h3NotaFinal);
 
+const divRanking = document.createElement("div");
+divRanking.id = "divRanking";
+document.body.appendChild(divRanking);
+
+const rankingP = document.createElement("p");
+rankingP.id = "rankingP";
+divRanking.appendChild(rankingP);
+
 // Creamos un botón para reiniciar el juego
 const btnGameAgain = document.createElement("button");
 btnGameAgain.id = "btnGameAgain";
