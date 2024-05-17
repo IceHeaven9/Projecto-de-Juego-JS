@@ -219,11 +219,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 
-	// Función botón de volver a jugar
+	// Función botón de volver a jugar desde el div con la puntuación
 	const btnGameAgainContent = document.getElementById("btnGameAgain");
 	btnGameAgainContent.addEventListener("click", resetGame);
 
-	// Función para salir del juego
+	//funcion para salir del juego desde el main
+	const exitMainBtn = document.getElementById("exitBtn");
+	exitMainBtn.addEventListener("click", function () {
+		location.reload();
+	});
+
+	// Función para salir del juego desde el div con la puntuación
 
 	const btnExitGameContent = document.getElementById("btnExitGame");
 	btnExitGameContent.addEventListener("click", function () {
@@ -240,6 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			divResultadoJuegoContent.classList.remove("hidden");
 			gameContent.classList.add("parteOculta");
 			divResultadoJuegoContent.classList.add("parteVisible");
+			tituloInternoContent[0].classList.add("parteOculta");
 		}
 	}
 });

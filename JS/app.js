@@ -33,12 +33,6 @@ const divContador = document.createElement("div");
 mainElements.appendChild(divContador);
 divContador.id = "divContador";
 
-// Creamos un h3 para el contador
-const h3Contador = document.createElement("h3");
-h3Contador.classList.add("contador");
-h3Contador.textContent = "";
-divContador.appendChild(h3Contador);
-
 // Un div para el texto del contador
 const divTextContador = document.createElement("div");
 divTextContador.id = "divTextContador";
@@ -134,12 +128,6 @@ const recuperarValoresYActualizarRanking = () => {
 // Llama a la función para recuperar los valores y actualizar el ranking
 recuperarValoresYActualizarRanking();
 
-// // Creamos un botón para desbloquear el ranking
-// const btnUnlockRanking = document.createElement("button");
-// btnUnlockRanking.id = "btnUnlockRanking";
-// btnUnlockRanking.textContent = "⬇️ Ranking ⬇️";
-// divRanking.appendChild(btnUnlockRanking);
-
 // Creamos un botón para reiniciar el juego
 const btnGameAgain = document.createElement("button");
 btnGameAgain.id = "btnGameAgain";
@@ -198,7 +186,7 @@ function startTimer() {
 
 		if (contador < 0) {
 			clearInterval(intervalId);
-			h3Contador.textContent = "";
+
 			divTextContador.textContent = "";
 			divTextContador.textContent = "Comienza el juego!!";
 
