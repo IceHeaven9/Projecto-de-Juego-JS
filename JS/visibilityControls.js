@@ -100,6 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	const divTextContadorContent = document.getElementById("divTextContador");
 	const resetBtnContent = document.getElementById("resetBtn");
 	const divResultadoJuegoContent = document.getElementById("divResultadoJuego");
+	const divRankingContent = document.getElementById("divRanking");
+	const tituloInternoContent = document.getElementsByClassName("tituloInterno");
+	const tituloRankingContent = document.getElementsByClassName("tituloRanking");
 
 	gameContent.classList.add("hidden");
 	divUserContent.classList.add("hidden");
@@ -108,6 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	divIntentosContent.classList.add("hidden");
 	resetBtnContent.classList.add("hidden");
 	divResultadoJuegoContent.classList.add("hidden");
+	divRankingContent.classList.add("hidden");
+	tituloInternoContent[0].classList.add("hidden");
+	tituloRankingContent[0].classList.add("hidden");
 
 	startGameBtn.addEventListener("click", startGame);
 	resetBtnController2.addEventListener("click", resetGame);
@@ -123,6 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			divTextContadorContent.classList.remove("hidden");
 			divIntentosContent.classList.remove("hidden");
 			resetBtnContent.classList.remove("hidden");
+			divRankingContent.classList.remove("hidden");
+			tituloInternoContent[0].classList.remove("hidden");
+			tituloRankingContent[0].classList.remove("hidden");
 			initializeGame();
 		}
 	}

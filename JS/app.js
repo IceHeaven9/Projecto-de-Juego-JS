@@ -17,6 +17,11 @@ function handleInputChange() {
 	localStorage.setItem("user", userName);
 }
 
+const tituloInterno = document.createElement("h4");
+tituloInterno.classList.add("tituloInterno");
+tituloInterno.textContent = "MATCH CARDS";
+document.body.appendChild(tituloInterno);
+
 // Añade el controlador de eventos al input
 user.addEventListener("change", handleInputChange);
 const h2 = document.createElement("h2");
@@ -75,7 +80,14 @@ divResultado.appendChild(h3NotaFinal);
 // Creamos un div para el ranking
 const divRanking = document.createElement("div");
 divRanking.id = "divRanking";
+divRanking.classList.add("ranking");
 document.body.appendChild(divRanking);
+
+// Creamos un h3 para el ranking
+const tituloRanking = document.createElement("h5");
+tituloRanking.classList.add("tituloRanking");
+tituloRanking.textContent = "Ranking";
+document.body.appendChild(tituloRanking);
 
 const recuperarValoresYActualizarRanking = () => {
 	// Recupera los valores del localStorage
@@ -108,6 +120,9 @@ const recuperarValoresYActualizarRanking = () => {
 	// Guarda el array en el localStorage
 	localStorage.setItem("arrayUsuarioNota", JSON.stringify(arrayUsuarioNota));
 
+	// Ordena el array por la nota de mayor a menor
+	arrayUsuarioNota.sort((a, b) => b.nota - a.nota);
+
 	// Recorre el array y añade un nuevo elemento "p" con el valor de "user" y "nota" de cada objeto del array al "divRanking"
 	arrayUsuarioNota.forEach((elemento) => {
 		const p = document.createElement("p");
@@ -119,17 +134,11 @@ const recuperarValoresYActualizarRanking = () => {
 // Llama a la función para recuperar los valores y actualizar el ranking
 recuperarValoresYActualizarRanking();
 
-// Creamos un botón para desbloquear el ranking
-const btnUnlockRanking = document.createElement("button");
-btnUnlockRanking.id = "btnUnlockRanking";
-btnUnlockRanking.textContent = "⬇️ Ranking ⬇️";
-divRanking.appendChild(btnUnlockRanking);
-
-// Creamos un h3 para el ranking
-const rankingH3 = document.createElement("h3");
-rankingH3.id = "rankingH3";
-rankingH3.textContent = "Mejor Puntuación:";
-divRanking.appendChild(rankingH3);
+// // Creamos un botón para desbloquear el ranking
+// const btnUnlockRanking = document.createElement("button");
+// btnUnlockRanking.id = "btnUnlockRanking";
+// btnUnlockRanking.textContent = "⬇️ Ranking ⬇️";
+// divRanking.appendChild(btnUnlockRanking);
 
 // Creamos un botón para reiniciar el juego
 const btnGameAgain = document.createElement("button");

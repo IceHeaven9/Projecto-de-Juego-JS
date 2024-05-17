@@ -33,7 +33,16 @@ header {
   align-items: center;
 }
 
-h1#title {
+h4.tituloInterno {
+  position: absolute;
+  bottom: 86%;
+  left: 7%;
+  font-size: 3.5rem;
+}
+
+h1#title,
+.tituloInterno,
+.tituloRanking {
   width: 100%;
   font-size: 3rem;
   font-family: var(--title-font-family);
@@ -121,6 +130,7 @@ body {
 main {
   box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
   position: relative;
+  bottom: 6%;
   min-height: 560px;
   max-height: 560px;
   min-width: 320px;
@@ -252,16 +262,21 @@ p#copyright {
 
 /* RANKING */
 
+
 #divRanking {
-  margin-top: 1rem;
-  min-width: 220px;
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   border-radius: 1rem;
-  background: linear-gradient(var(--main-color2), var(--main-color));
+  background: linear-gradient(var(--main-color), var(--main-color2));
   box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
+  text-align: center;
+  position: absolute;
+  bottom: 2%;
+  padding: 1rem 3rem 1rem 3rem;
+}
+
+.tituloRanking {
+  position: absolute;
+  bottom: 13.5%;
+  left: 28%;
 }
 
 #btnUnlockRanking {
@@ -278,6 +293,7 @@ p#copyright {
   transition: background-color 0.3s, transform 0.3s;
   display: none;
 }
+
 
 /* CLASES COMPARTIDAS */
 
