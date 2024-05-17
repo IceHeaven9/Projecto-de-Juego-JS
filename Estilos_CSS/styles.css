@@ -203,10 +203,8 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--card-background-color),
-    var(--card-background-color2)
-  );
+  background: linear-gradient(var(--card-background-color),
+      var(--card-background-color2));
   transform: rotateY(180deg);
 }
 
@@ -216,10 +214,8 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--front-card-background-color),
-    var(--front-card-background-color2)
-  );
+  background: linear-gradient(var(--front-card-background-color),
+      var(--front-card-background-color2));
 }
 
 .front img {
@@ -280,6 +276,7 @@ p#copyright {
   border-radius: 1rem;
   box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
   transition: background-color 0.3s, transform 0.3s;
+  display: none;
 }
 
 /* CLASES COMPARTIDAS */

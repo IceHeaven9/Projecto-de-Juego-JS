@@ -45,7 +45,10 @@ function contadores(divIntentosContent, divFallosContent) {
 			this.intentos++;
 			divIntentosContent.textContent = `Intentos: ${this.intentos}`;
 			let nota = calcularNota(this.intentos);
-			let guardarNota = localStorage.setItem("nota", nota.toFixed(1));
+
+			const guardarNota = (nota) =>
+				localStorage.setItem("nota", nota.toFixed(1));
+			guardarNota(nota);
 
 			let claseColor = this.determinarClaseColor(nota);
 			h3ResultadoContent.textContent = `Lo conseguiste en: ${this.intentos} intentos!`;
@@ -231,15 +234,3 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 });
-
-let user = userInput.value;
-const resultNota = localStorage.getItem("nota");
-const rankingPcontent = document.getElementById("rankingP");
-rankingPcontent.innerText = `${user}: ${resultNota}`;
-// let user = userInput.value;
-// let score = counters.intentos;
-// let ranking = JSON.parse(localStorage.getItem("ranking")) || [];
-// ranking.push({ user, score });
-// ranking.sort((a, b) => a.score - b.score);
-// ranking = ranking.slice(0, 5);
-// localStorage.setItem("ranking", JSON.stringify(ranking));
