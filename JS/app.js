@@ -72,17 +72,11 @@ divRanking.id = "divRanking";
 divRanking.classList.add("ranking");
 document.body.appendChild(divRanking);
 
-// Creamos un h3 para el ranking
-const tituloRanking = document.createElement("h5");
-tituloRanking.classList.add("tituloRanking");
-tituloRanking.textContent = "Ranking";
-divRanking.appendChild(tituloRanking);
-
-// Creamos un h4 para el título del juego en el body
-const tituloInterno = document.createElement("h4");
-tituloInterno.classList.add("tituloInterno");
-tituloInterno.textContent = "MATCH CARDS";
-document.body.appendChild(tituloInterno);
+// Creamos un botón para el ranking
+const btnRanking = document.createElement("button");
+btnRanking.className = "btnRanking";
+btnRanking.textContent = "Ver ranking";
+divRanking.appendChild(btnRanking);
 
 const recuperarValoresYActualizarRanking = () => {
   // Recupera los valores del localStorage
@@ -121,6 +115,7 @@ const recuperarValoresYActualizarRanking = () => {
   // Recorre el array y añade un nuevo elemento "p" con el valor de "user" y "nota" de cada objeto del array al "divRanking"
   arrayUsuarioNota.forEach((elemento) => {
     const p = document.createElement("p");
+    p.classList.add("pRanking");
     p.textContent = `${elemento.user}: ${elemento.nota}`;
     divRanking.appendChild(p);
   });
