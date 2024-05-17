@@ -1,4 +1,11 @@
-/* VARIABLES */
+/* 
+██╗   ██╗ █████╗ ██████╗ ██╗ █████╗ ██████╗ ██╗     ███████╗███████╗
+██║   ██║██╔══██╗██╔══██╗██║██╔══██╗██╔══██╗██║     ██╔════╝██╔════╝
+██║   ██║███████║██████╔╝██║███████║██████╔╝██║     █████╗  ███████╗
+╚██╗ ██╔╝██╔══██║██╔══██╗██║██╔══██║██╔══██╗██║     ██╔══╝  ╚════██║
+ ╚████╔╝ ██║  ██║██║  ██║██║██║  ██║██████╔╝███████╗███████╗███████║
+  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝ */
+
 :root {
   --text-font-family: "Poetsen One", "Arial", "sans-serif";
   --title-font-family: "Oleo Script", "Arial", "sans-serif";
@@ -17,15 +24,26 @@
   --nota-alta-color: rgb(59, 142, 237);
 }
 
-/* GENERAL */
+/* 
+ ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ██╗
+██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗██║
+██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║██║
+██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║██║
+╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║███████╗
+ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝ */
 
 html {
   width: 100vw;
   height: 100vh;
-
 }
 
-/* HEADER */
+/* 
+██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
+██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝ */
 
 header {
   display: flex;
@@ -34,18 +52,7 @@ header {
   align-items: center;
 }
 
-h4.tituloInterno {
-  position: fixed;
-  bottom: 86%;
-  font-size: 3.5rem;
-  width: 100%;
-  min-width: 80px;
-  text-align: center;
-}
-
-h1#title,
-.tituloInterno,
-.tituloRanking {
+h1#title {
   width: 100%;
   font-size: 3rem;
   font-family: var(--title-font-family);
@@ -109,7 +116,13 @@ button[type="reset"]:hover {
   transform: translateY(-2px);
 }
 
-/* BODY */
+/*
+██████╗  ██████╗ ██████╗ ██╗   ██╗
+██╔══██╗██╔═══██╗██╔══██╗╚██╗ ██╔╝
+██████╔╝██║   ██║██║  ██║ ╚████╔╝ 
+██╔══██╗██║   ██║██║  ██║  ╚██╔╝
+██████╔╝╚██████╔╝██████╔╝   ██║
+╚═════╝  ╚═════╝ ╚═════╝    ╚═╝    */
 
 body {
   font-family: var(--text-font-family);
@@ -129,17 +142,42 @@ body {
   flex-wrap: nowrap;
 }
 
-/* Main */
+.tituloInterno {
+  font-family: var(--title-font-family);
+  font-size: 3rem;
+  text-shadow: 8px 8px 16px rgba(0, 0, 0, 1);
+  color: var(--div-background-color);
+  order: 1;
+  text-align: center;
+  display: none;
+}
+
+.tituloRanking {
+  font-family: var(--title-font-family);
+  font-size: 2rem;
+  text-shadow: 8px 8px 16px rgba(0, 0, 0, 1);
+  color: var(--div-background-color);
+  order: 3;
+}
+
+/* 
+███╗   ███╗ █████╗ ██╗███╗   ██╗
+████╗ ████║██╔══██╗██║████╗  ██║
+██╔████╔██║███████║██║██╔██╗ ██║
+██║╚██╔╝██║██╔══██║██║██║╚██╗██║
+██║ ╚═╝ ██║██║  ██║██║██║ ╚████║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ */
 
 main {
   box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
   position: relative;
-  bottom: 8%;
-  min-height: 560px;
+
+  min-height: 380px;
   max-height: 560px;
-  min-width: 320px;
+  min-width: 300px;
   max-width: 400px;
   width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -148,12 +186,13 @@ main {
   gap: 0.5rem;
   border-radius: 1rem;
   background: linear-gradient(var(--main-color2), var(--main-color));
+  order: 2;
 }
 
 .container {
   margin-top: 6rem;
   margin-bottom: 1.5rem;
-  height: 80%;
+  height: 100%;
   width: 90%;
   border-radius: 1rem;
   display: grid;
@@ -217,8 +256,10 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(var(--card-background-color),
-      var(--card-background-color2));
+  background: linear-gradient(
+    var(--card-background-color),
+    var(--card-background-color2)
+  );
   transform: rotateY(180deg);
 }
 
@@ -228,8 +269,10 @@ li {
   left: 0;
   font-size: 1.6rem;
   border-radius: 0.5rem;
-  background: linear-gradient(var(--front-card-background-color),
-      var(--front-card-background-color2));
+  background: linear-gradient(
+    var(--front-card-background-color),
+    var(--front-card-background-color2)
+  );
 }
 
 .front img {
@@ -249,7 +292,13 @@ li {
   padding: 0.5rem;
 }
 
-/* Footer */
+/* 
+███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ 
+██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+█████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝ */
 
 footer {
   width: 100%;
@@ -259,35 +308,24 @@ p#copyright {
   font-family: var(--text-font-family);
   text-align: left;
   color: var(--front-card-background-color);
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   display: flex;
   justify-content: center;
 }
 
-/* RANKING */
-
-
-#divRanking {
-  border-radius: 1rem;
-  background: linear-gradient(var(--main-color), var(--main-color2));
-  box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
-  text-align: center;
-  position: absolute;
-  bottom: 3%;
-  padding: 1rem 3rem 1rem 3rem;
-}
-
-
-.tituloRanking {
-  position: fixed;
-  bottom: 14%;
-
-  text-align: center;
-  width: 100vw;
-}
-
-
-/* CLASES COMPARTIDAS */
+/* 
+ ██████╗██╗      █████╗ ███████╗███████╗███████╗
+██╔════╝██║     ██╔══██╗██╔════╝██╔════╝██╔════╝
+██║     ██║     ███████║███████╗█████╗  ███████╗
+██║     ██║     ██╔══██║╚════██║██╔══╝  ╚════██║
+╚██████╗███████╗██║  ██║███████║███████╗███████║
+ ╚═════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+ ██████╗ ██████╗ ███╗   ███╗██████╗  █████╗ ██████╗ ████████╗██╗██████╗  █████╗ ███████╗
+██╔════╝██╔═══██╗████╗ ████║██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██║██╔══██╗██╔══██╗██╔════╝
+██║     ██║   ██║██╔████╔██║██████╔╝███████║██████╔╝   ██║   ██║██║  ██║███████║███████╗
+██║     ██║   ██║██║╚██╔╝██║██╔═══╝ ██╔══██║██╔══██╗   ██║   ██║██║  ██║██╔══██║╚════██║
+╚██████╗╚██████╔╝██║ ╚═╝ ██║██║     ██║  ██║██║  ██║   ██║   ██║██████╔╝██║  ██║███████║
+ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝ */
 
 .hidden {
   display: none;
@@ -317,7 +355,13 @@ p#copyright {
   color: var(--nota-alta-color);
 }
 
-/* DIVS */
+/* 
+██████╗ ██╗██╗   ██╗███████╗
+██╔══██╗██║██║   ██║██╔════╝
+██║  ██║██║██║   ██║███████╗
+██║  ██║██║╚██╗ ██╔╝╚════██║
+██████╔╝██║ ╚████╔╝ ███████║
+╚═════╝ ╚═╝  ╚═══╝  ╚══════╝ */
 
 #divIntentos {
   position: absolute;
@@ -404,12 +448,22 @@ p#copyright {
   border: 1px solid var(--front-card-background-color);
   border-radius: 1rem;
   background: linear-gradient(var(--main-color2), var(--main-color));
-  box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
+  box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.8);
+}
+
+#divRanking {
+  min-width: 320px;
+  border-radius: 1rem;
+  background: linear-gradient(var(--main-color), var(--main-color2));
+  box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+  order: 4;
 }
 
 #gracias {
   position: absolute;
-
   top: 10%;
   left: 20%;
 }
@@ -426,7 +480,13 @@ p#copyright {
   top: 50%;
 }
 
-/* BOTONES */
+/* 
+██████╗  ██████╗ ████████╗ ██████╗ ███╗   ██╗███████╗███████╗
+██╔══██╗██╔═══██╗╚══██╔══╝██╔═══██╗████╗  ██║██╔════╝██╔════╝
+██████╔╝██║   ██║   ██║   ██║   ██║██╔██╗ ██║█████╗  ███████╗
+██╔══██╗██║   ██║   ██║   ██║   ██║██║╚██╗██║██╔══╝  ╚════██║
+██████╔╝╚██████╔╝   ██║   ╚██████╔╝██║ ╚████║███████╗███████║
+╚═════╝  ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝ */
 
 #resetBtn {
   position: absolute;
@@ -494,7 +554,13 @@ p#copyright {
   transform: translateY(-2px);
 }
 
-/* ANIMACIONES */
+/* 
+ █████╗ ███╗   ██╗██╗███╗   ███╗ █████╗  ██████╗██╗ ██████╗ ███╗   ██╗███████╗███████╗
+██╔══██╗████╗  ██║██║████╗ ████║██╔══██╗██╔════╝██║██╔═══██╗████╗  ██║██╔════╝██╔════╝
+███████║██╔██╗ ██║██║██╔████╔██║███████║██║     ██║██║   ██║██╔██╗ ██║█████╗  ███████╗
+██╔══██║██║╚██╗██║██║██║╚██╔╝██║██╔══██║██║     ██║██║   ██║██║╚██╗██║██╔══╝  ╚════██║
+██║  ██║██║ ╚████║██║██║ ╚═╝ ██║██║  ██║╚██████╗██║╚██████╔╝██║ ╚████║███████╗███████║
+╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝ */
 
 @keyframes matched {
   0% {
@@ -554,20 +620,24 @@ p#copyright {
   }
 }
 
-/* MEDIA QUERY */
+/* 
+███╗   ███╗███████╗██████╗ ██╗ █████╗ 
+████╗ ████║██╔════╝██╔══██╗██║██╔══██╗
+██╔████╔██║█████╗  ██║  ██║██║███████║
+██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║
+██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║
+╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝
+
+ ██████╗ ██╗   ██╗███████╗██████╗ ██╗   ██╗
+██╔═══██╗██║   ██║██╔════╝██╔══██╗╚██╗ ██╔╝
+██║   ██║██║   ██║█████╗  ██████╔╝ ╚████╔╝ 
+██║▄▄ ██║██║   ██║██╔══╝  ██╔══██╗  ╚██╔╝
+╚██████╔╝╚██████╔╝███████╗██║  ██║   ██║
+ ╚══▀▀═╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝    */
 
 @media screen and (min-width: 600px) {
-
-  h4.tituloInterno {
-    position: fixed;
-    bottom: 86%;
-    width: 100%;
-    text-align: center;
-    font-size: 3.5rem;
-  }
-
   h1#title {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   input[type="text"]#user {
@@ -580,64 +650,67 @@ p#copyright {
     font-size: 1.5rem;
   }
 
+  .tituloInterno {
+    font-size: 4rem;
+  }
+
   main {
-    max-height: 600px;
-    max-width: 400px;
-    height: 100vh;
+    min-height: 660px;
+    max-height: 660px;
+    min-width: 420px;
+    max-width: 500px;
   }
 
   .container {
-    gap: 1.5rem;
-    padding: 1.5rem;
+    margin-top: 7rem;
+    margin-bottom: 2.5rem;
   }
 
   .front img {
-    padding: 0.7rem;
+    padding: 0.8rem;
   }
 
-  .card {
-    height: 100%;
-    width: 100%;
+  #divRanking {
+    min-width: 420px;
   }
 
-  #divUser {
-    font-size: 0.9rem;
-    top: 2%;
+  .tituloRanking {
+    font-size: 2.5rem;
   }
 
-  #divIntentos {
-    font-size: 1.3rem;
-    top: 2%;
-  }
-
-  #divTextContador {
-    font-size: 1.3rem;
-    top: 9%;
-  }
-
-  #divFallos {
-    font-size: 1.3rem;
-    top: 9%;
-  }
-
-  #resetBtn {
-    font-size: 1.7rem;
-    bottom: 2%;
-    right: 4.3%;
-  }
-
-  #exitBtn {
-    font-size: 1.7rem;
-    bottom: 2%;
-    left: 4.3%;
-  }
-
-  p#copyright {
+  #divRanking p {
     font-size: 1.2rem;
   }
 
+  #divUser {
+    font-size: 1rem;
+  }
+
+  #divIntentos {
+    font-size: 1.2rem;
+  }
+
+  #divTextContador {
+    font-size: 1.2rem;
+  }
+
+  #divFallos {
+    font-size: 1.2rem;
+  }
+
+  #resetBtn {
+    font-size: 1rem;
+  }
+
+  #exitBtn {
+    font-size: 1rem;
+  }
+
+  p#copyright {
+    font-size: 1rem;
+  }
+
   #gracias {
-    left: 22%;
     font-size: 2rem;
   }
 
@@ -656,38 +729,10 @@ p#copyright {
 
   #h3NotaFinal {
     font-size: 1.4rem;
-    left: 21%;
-  }
-
-  #divRanking {
-    border-radius: 1rem;
-    background: linear-gradient(var(--main-color), var(--main-color2));
-    box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
-    text-align: center;
-    position: absolute;
-    bottom: 2%;
-    padding: 1rem 3rem 1rem 3rem;
-  }
-
-
-  .tituloRanking {
-    position: fixed;
-    bottom: 17%;
-    text-align: center;
-    width: 100%
   }
 }
 
 @media screen and (min-width: 800px) {
-
-  h4.tituloInterno {
-    position: fixed;
-    bottom: 86%;
-    width: 100%;
-    text-align: center;
-    font-size: 3.5rem;
-  }
-
   h1#title {
     font-size: 6rem;
   }
@@ -702,70 +747,72 @@ p#copyright {
     font-size: 2rem;
   }
 
+  .tituloInterno {
+    font-size: 5rem;
+  }
+
   main {
-    max-height: 900px;
-    max-width: 750px;
-    height: 100vh;
+    min-height: 760px;
+    max-height: 760px;
+    min-width: 520px;
+    max-width: 600px;
   }
 
   .container {
-    gap: 1.5rem;
-    padding: 1.5rem;
+    margin-top: 8rem;
+    margin-bottom: 3.5rem;
+  }
+
+  #divRanking {
+    min-width: 520px;
+  }
+
+  .tituloRanking {
+    font-size: 3rem;
   }
 
   .front img {
-    padding: 1.2rem;
+    padding: 1rem;
   }
 
-  .card {
-    height: 100%;
-    width: 100%;
+  #divRanking p {
+    font-size: 1.5rem;
   }
 
   #divUser {
     font-size: 1rem;
-    top: 1%;
   }
 
   #divIntentos {
     font-size: 1.5rem;
-    top: 1%;
   }
 
   #divTextContador {
     font-size: 1.5rem;
-    top: 8%;
   }
 
   #divFallos {
     font-size: 1.5rem;
-    top: 8%;
   }
 
   #resetBtn {
-    font-size: 1.7rem;
-    bottom: 2%;
-    right: 4.3%;
+    font-size: 1.2rem;
   }
 
   #exitBtn {
-    font-size: 1.7rem;
-    bottom: 2%;
-    left: 4.3%;
+    font-size: 1.2rem;
   }
 
   p#copyright {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   #gracias {
-    left: 28%;
     font-size: 2rem;
   }
 
   #h3Resultado {
     font-size: 2rem;
-    left: 13%;
   }
 
   #btnGameAgain {
@@ -778,23 +825,5 @@ p#copyright {
 
   #h3NotaFinal {
     font-size: 1.6rem;
-    left: 24%;
-  }
-
-  #divRanking {
-    border-radius: 1rem;
-    background: linear-gradient(var(--main-color), var(--main-color2));
-    box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.63);
-    text-align: center;
-    position: absolute;
-    bottom: 2%;
-    padding: 1rem 3rem 1rem 3rem;
-  }
-
-  .tituloRanking {
-    position: fixed;
-    bottom: 17%;
-    text-align: center;
-    width: 100%
   }
 }
