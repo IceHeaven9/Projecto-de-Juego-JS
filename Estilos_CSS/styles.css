@@ -437,6 +437,7 @@ p#copyright {
   min-width: 310px;
   background: linear-gradient(var(--main-color2), var(--main-color));
   box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
 }
 
 #gracias {
