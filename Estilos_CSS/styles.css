@@ -89,13 +89,11 @@ input[type="text"]#user {
   animation: anim2 5s infinite;
 }
 
-button#startGame,
-button[type="reset"] {
+button#startGame, button[type="reset"] {
   font-family: var(--text-font-family);
   font-weight: bolder;
   margin-top: 1rem;
   background-color: var(--buttons-background-color);
-
   color: var(--div-background-color);
   border: none;
   padding: 10px 20px;
@@ -295,9 +293,9 @@ footer {
 
 p#copyright {
   font-family: var(--text-font-family);
-  text-align: left;
+  text-align: center;
   color: var(--buttons-background-color);
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   display: flex;
   justify-content: center;
 }
