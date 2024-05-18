@@ -10,14 +10,12 @@
   --text-font-family: "Poetsen One", "Arial", "sans-serif";
   --title-font-family: "Oleo Script", "Arial", "sans-serif";
   --button-hover-color: rgb(33, 169, 255);
-  --main-color: rgb(58, 132, 171);
-  --main-color2: rgb(148, 120, 178);
-  --div-background-color: rgb(234, 234, 236);
-  --card-background-color: rgb(249, 165, 199);
+  --main-background-color: rgba(114, 181, 197, 0.5);
+  --card-background-color: rgb(249, 165, 199, 0.5);
   --card-background-color2: rgb(217, 221, 194);
-  --buttons-background-color: rgb(75, 78, 80);
+  --buttons-background-color: rgb(19, 19, 19);
   --front-card-background-color: rgb(19, 19, 19);
-  --front-card-background-color2: rgb(39, 39, 39);
+  --front-card-background-color2: rgb(2, 2, 2);
   --div-box-shadow-color: rgba(0, 0, 0, 1);
   --nota-baja-color: rgb(203, 42, 73);
   --nota-media-color: rgb(248, 228, 75);
@@ -75,7 +73,7 @@ input[type="text"]#user {
   font-style: italic;
   font-weight: bolder;
   color: var(--buttons-background-color);
-  background-color: var(--div-background-color);
+  background-color: rgba(114, 181, 197, 0.5);
   font-size: 1rem;
   padding: 10px;
   border: none;
@@ -89,13 +87,12 @@ input[type="text"]#user {
   animation: anim2 5s infinite;
 }
 
-button#startGame,
-button[type="reset"] {
+button#startGame {
   font-family: var(--text-font-family);
   font-weight: bolder;
   margin-top: 1rem;
-  background-color: var(--buttons-background-color);
-  color: var(--div-background-color);
+  background-color: rgba(114, 181, 197, 0.5);
+  color: var(--buttons-background-color);
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -158,13 +155,13 @@ body {
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ */
 
 main {
+  background-color: var(--main-background-color);
   box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
   position: relative;
-
-  min-height: 320px;
-  max-height: 500px;
-  min-width: 280px;
-  max-width: 350px;
+  min-height: 270px;
+  max-height: 400px;
+  min-width: 200px;
+  max-width: 280px;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -174,30 +171,20 @@ main {
   margin: 0rem 0.5rem 0rem 0.5rem;
   gap: 0.5rem;
   border-radius: 1rem;
-  background: linear-gradient(var(--main-color2), var(--main-color));
   order: 1;
 }
 
 .container {
-  margin-top: 5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
   height: 100%;
-  width: 90%;
-  border-radius: 1rem;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.8rem;
 }
 
 article ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
   width: 100%;
   height: 100%;
   transition: transform 1s;
@@ -205,9 +192,6 @@ article ul {
 }
 
 li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 2);
@@ -216,7 +200,6 @@ li {
 .card {
   height: 100%;
   width: 100%;
-  position: relative;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   perspective: 600px;
@@ -232,18 +215,10 @@ li {
   position: absolute;
   height: 100%;
   width: 100%;
-  display: grid;
-  place-content: center;
-  font-size: 8rem;
   backface-visibility: hidden;
-  user-select: none;
 }
 
 .back {
-  z-index: 0;
-  top: 0;
-  left: 0;
-  font-size: 1.6rem;
   border-radius: 0.5rem;
   background: linear-gradient(
     var(--card-background-color),
@@ -253,10 +228,6 @@ li {
 }
 
 .front {
-  z-index: 1;
-  top: 0;
-  left: 0;
-  font-size: 1.6rem;
   border-radius: 0.5rem;
   background: linear-gradient(
     var(--front-card-background-color),
@@ -266,19 +237,17 @@ li {
 
 .front img {
   height: 100%;
-  object-fit: contain;
-  box-sizing: border-box;
-  padding: 0.6rem;
   width: 100%;
+  object-fit: contain;
   backface-visibility: hidden;
+  border-radius: 0.5rem;
 }
 
 .back img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  box-sizing: border-box;
-  padding: 0.5rem;
+  padding: 0.3rem;
 }
 
 /* 
@@ -355,14 +324,13 @@ p#copyright {
 #divIntentos {
   position: absolute;
   top: 2%;
-  right: 4%;
+  right: 0%;
   font-family: var(--text-font-family);
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 5px;
-  background-color: var(--div-background-color);
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  background-color: transparent;
   border-radius: 20px;
   font-size: 0.8rem;
   white-space: nowrap;
@@ -372,14 +340,13 @@ p#copyright {
 #divUser {
   position: absolute;
   top: 2%;
-  left: 4%;
+  left: 0%;
   font-family: var(--text-font-family);
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 5px;
-  background-color: var(--div-background-color);
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  background-color: transparent;
   border-radius: 20px;
   font-size: 0.6rem;
   white-space: nowrap;
@@ -388,12 +355,11 @@ p#copyright {
 
 #divTextContador {
   position: absolute;
-  top: 11%;
-  left: 4%;
+  top: 8%;
+  left: 0%;
   padding: 5px;
   border-radius: 5px;
-  background-color: var(--div-background-color);
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  background-color: transparent;
   border-radius: 20px;
   font-size: 0.8rem;
   white-space: nowrap;
@@ -407,12 +373,11 @@ p#copyright {
 
 #divFallos {
   position: absolute;
-  top: 11%;
-  right: 4%;
+  top: 8%;
+  right: 0%;
   padding: 5px;
   border-radius: 5px;
-  background-color: var(--div-background-color);
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  background-color: transparent;
   border-radius: 20px;
   font-size: 0.8rem;
   white-space: nowrap;
@@ -435,7 +400,7 @@ p#copyright {
   width: 90%;
   height: 35%;
   min-width: 310px;
-  background: linear-gradient(var(--main-color2), var(--main-color));
+  background-color: var(--main-background-color);
   box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.8);
   border-radius: 1rem;
 }
@@ -453,13 +418,12 @@ p#copyright {
 }
 
 #divRanking {
-  min-width: 280px;
-  max-width: 350px;
+  min-width: 200px;
+  max-width: 280px;
   border-radius: 1rem;
-  background: linear-gradient(var(--main-color), var(--main-color2));
   box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
+  background-color: var(--main-background-color);
   text-align: center;
-  width: 320px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   order: 3;
@@ -469,13 +433,15 @@ p#copyright {
 .divPulsado {
   min-width: 320px;
   border-radius: 1rem;
-  background: linear-gradient(var(--main-color), var(--main-color2));
   box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
   text-align: center;
-  padding: 0rem 1rem 1rem 1rem;
+  padding: 0rem 1rem 0.5rem 1rem;
   margin-top: 1rem;
-  margin-bottom: 1rem;
   order: 3;
+}
+
+.pRanking {
+  font-size: 0.8rem;
 }
 
 /* 
@@ -489,30 +455,35 @@ p#copyright {
 #resetBtn {
   position: absolute;
   bottom: 2%;
-  right: 4.3%;
+  right: 4.5%;
   font-size: 0.8rem;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0;
+  background-color: transparent;
+  font-family: var(--text-font-family);
+  font-weight: bolder;
+  color: var(--buttons-background-color);
+  text-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  border: none;
+  cursor: pointer;
 }
 
 #exitBtn {
   position: absolute;
   bottom: 2%;
-  left: 4.3%;
+  left: 5.5%;
   font-size: 0.8rem;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0;
+  background-color: transparent;
+  font-family: var(--text-font-family);
+  font-weight: bolder;
+  color: var(--buttons-background-color);
+  text-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  border: none;
+  cursor: pointer;
 }
 
 .btnRanking {
   font-family: var(--text-font-family);
-  color: var(--div-background-color);
+  color: var(--buttons-background-color);
   background-color: transparent;
-  text-decoration: underline;
   border: none;
   font-size: 0.8rem;
   border-radius: 20px;
@@ -525,7 +496,7 @@ p#copyright {
   font-family: var(--text-font-family);
   color: var(--div-background-color);
   background-color: transparent;
-  text-decoration: underline;
+  color: var(--buttons-background-color);
   border: none;
   font-size: 0.8rem;
   border-radius: 20px;
@@ -599,34 +570,27 @@ p#copyright {
 @keyframes anim {
   0% {
     transform: scale(1);
+    color: rgb(200, 227, 215);
+  }
+
+  25% {
+    transform: scale(0.95);
+    color: rgb(255, 182, 193);
   }
 
   50% {
     transform: scale(0.9);
+    color: rgb(173, 216, 230);
+  }
+
+  75% {
+    transform: scale(0.95);
+    color: rgb(255, 240, 245);
   }
 
   100% {
     transform: scale(1);
-  }
-
-  0% {
-    color: rgb(97, 168, 164);
-  }
-
-  25% {
-    color: var(--main-color);
-  }
-
-  50% {
-    color: var(--main-color2);
-  }
-
-  75% {
-    color: var(--card-background-color2);
-  }
-
-  100% {
-    color: var(--card-background-color);
+    color: rgb(255, 250, 205);
   }
 }
 
