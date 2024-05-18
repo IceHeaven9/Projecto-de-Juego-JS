@@ -89,7 +89,8 @@ input[type="text"]#user {
   animation: anim2 5s infinite;
 }
 
-button#startGame, button[type="reset"] {
+button#startGame,
+button[type="reset"] {
   font-family: var(--text-font-family);
   font-weight: bolder;
   margin-top: 1rem;
@@ -138,6 +139,7 @@ body {
   width: 100vw;
   height: 100vh;
   flex-wrap: nowrap;
+  overflow-y: hidden;
 }
 .tituloRanking {
   font-family: var(--title-font-family);
