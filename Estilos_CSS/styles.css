@@ -364,7 +364,7 @@ p#copyright {
   background-color: var(--div-background-color);
   box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   white-space: nowrap;
   color: var(--buttons-background-color);
 }
@@ -381,7 +381,7 @@ p#copyright {
   background-color: var(--div-background-color);
   box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   white-space: nowrap;
   color: var(--buttons-background-color);
 }
@@ -395,7 +395,7 @@ p#copyright {
   background-color: var(--div-background-color);
   box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   white-space: nowrap;
   font-family: "Poetsen One";
   font-weight: bolder;
@@ -414,7 +414,7 @@ p#copyright {
   background-color: var(--div-background-color);
   box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
   border-radius: 20px;
-  font-size: 1rem;
+  font-size: 0.6rem;
   white-space: nowrap;
   font-family: "Poetsen One";
   font-weight: bolder;
