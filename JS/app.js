@@ -80,8 +80,8 @@ document.body.appendChild(divRanking);
 // Creamos un botón para el ranking
 const btnRanking = document.createElement("button");
 btnRanking.className = "btnRanking";
-btnRanking.textContent = "⬇️Ranking⬇️";
-divRanking.appendChild(btnRanking);
+btnRanking.textContent = "⬇Ranking⬇";
+mainElements.appendChild(btnRanking);
 
 const recuperarValoresYActualizarRanking = () => {
   // Recupera los valores del localStorage

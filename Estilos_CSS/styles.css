@@ -137,9 +137,9 @@ main {
   background-color: var(--main-background-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   position: relative;
-  min-height: 270px;
-  max-height: 400px;
-  min-width: 200px;
+  min-height: 360px;
+  max-height: 360px;
+  min-width: 280px;
   max-width: 280px;
   width: 100vw;
   height: 100vh;
@@ -236,19 +236,17 @@ li {
 ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝ */
 
-footer {
-  width: 100%;
+div.divFooter {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: absolute;
   bottom: 0;
+  width: 100vw;
 }
 
 p#copyright {
   font-family: var(--text-font-family);
-  text-align: center;
   color: var(--color-text);
   font-size: 0.5rem;
 }
@@ -410,6 +408,10 @@ p#copyright {
 }
 
 #divRanking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 200px;
   max-width: 280px;
   border-radius: 1rem;
@@ -489,19 +491,20 @@ p#copyright {
 }
 
 .btnRanking {
-  background-color: var(--main-background-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  position: absolute;
+  bottom: 2%;
+
+  background-color: transparent;
   color: var(--color-text);
-  font-size: 1rem;
-  padding: 2px 5px;
-  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  font-size: 0.8rem;
   border: none;
   border-radius: 10px;
+  padding: 2px 5px;
   cursor: pointer;
   font-family: var(--text-font-family);
   font-weight: bolder;
   transition: color 0.3s, text-shadow 0.3s;
-  visibility: visible;
 }
 
 .btnRankingPulsado {
