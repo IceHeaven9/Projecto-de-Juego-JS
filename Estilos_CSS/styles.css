@@ -155,7 +155,7 @@ main {
 
 .container {
   margin-top: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   height: 100%;
   width: 100%;
   display: grid;
@@ -236,16 +236,15 @@ li {
 ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
 ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝ */
 
-div.divFooter {
+.divFooter {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100vw;
-}
-
-p#copyright {
+  padding: 0 1rem;
   font-family: var(--text-font-family);
   color: var(--color-text);
   font-size: 0.5rem;
@@ -319,10 +318,10 @@ p#copyright {
 
 #divUser {
   position: absolute;
-  top: 2%;
+  top: 4%;
   left: 5%;
   font-family: var(--text-font-family);
-  padding: 5px 5px;
+  padding: 2px 5px;
   border-radius: 10px;
   background-color: transparent;
   font-size: 0.6rem;
@@ -333,10 +332,10 @@ p#copyright {
 
 #divIntentos {
   position: absolute;
-  top: 2%;
+  top: 4%;
   right: 5%;
   font-family: var(--text-font-family);
-  padding: 5px 5px;
+  padding: 2px 5px;
   border-radius: 10px;
   background-color: transparent;
   font-size: 0.8rem;
@@ -347,9 +346,9 @@ p#copyright {
 
 #divTextContador {
   position: absolute;
-  top: 11%;
+  top: 13%;
   left: 5%;
-  padding: 5px 5px;
+  padding: 2px 5px;
   border-radius: 5px;
   background-color: transparent;
   border-radius: 10px;
@@ -364,9 +363,9 @@ p#copyright {
 
 #divFallos {
   position: absolute;
-  top: 11%;
+  top: 13%;
   right: 5%;
-  padding: 5px 5px;
+  padding: 2px 5px;
   border-radius: 10px;
   background-color: transparent;
   font-size: 0.8rem;
@@ -384,15 +383,16 @@ p#copyright {
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  width: 100%;
-  min-width: 250px;
-  padding-top: 0.5rem;
+  width: 100vw;
+  min-width: 280px;
+  max-width: 280px;
+  padding: 0.5rem;
   color: var(--color-text);
   background-color: var(--main-background-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   border-radius: 1rem;
   position: absolute; /* importante no borrar o se jode todo */
-  top: 50%;
+  top: 25%;
 }
 
 #gracias {
@@ -412,7 +412,7 @@ p#copyright {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 200px;
+  min-width: 280px;
   max-width: 280px;
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
@@ -440,7 +440,7 @@ p#copyright {
 
 #resetBtn {
   position: absolute;
-  bottom: 2%;
+  bottom: 4%;
   right: 5%;
   background-color: transparent;
   color: var(--color-text);
@@ -457,7 +457,7 @@ p#copyright {
 
 #exitBtn {
   position: absolute;
-  bottom: 2%;
+  bottom: 4%;
   left: 5.5%;
   background-color: transparent;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
@@ -470,6 +470,28 @@ p#copyright {
   font-family: var(--text-font-family);
   font-weight: bolder;
   transition: color 0.3s, text-shadow 0.3s;
+}
+
+.btnRanking {
+  position: absolute;
+  bottom: 4%;
+  background-color: transparent;
+  color: var(--color-text);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-family: var(--text-font-family);
+  font-weight: bolder;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.btnRankingPulsado {
+  background-color: transparent;
+
+  animation: matched cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 #exitBtn:hover,
@@ -488,29 +510,6 @@ p#copyright {
 .btnRanking:focus {
   color: var(--color-text);
   text-shadow: 0 0 5px rgba(19, 19, 19, 0.5);
-}
-
-.btnRanking {
-  position: absolute;
-  bottom: 2%;
-
-  background-color: transparent;
-  color: var(--color-text);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-  font-size: 0.8rem;
-  border: none;
-  border-radius: 10px;
-  padding: 2px 5px;
-  cursor: pointer;
-  font-family: var(--text-font-family);
-  font-weight: bolder;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-
-.btnRankingPulsado {
-  background-color: transparent;
-
-  animation: matched cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 #btnGameAgain {
@@ -619,197 +618,137 @@ p#copyright {
 ╚██████╔╝╚██████╔╝███████╗██║  ██║   ██║
  ╚══▀▀═╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝    */
 
-@media screen and (min-width: 600px) {
-  h1#title {
-    font-size: 4rem;
+/*  */
+
+/* TABLETS PEQUEÑAS */
+
+/*  */
+
+@media (min-width: 500px) and (max-width: 700px) {
+  /* GENERAL */
+
+  html {
+    font-size: 20.8px;
   }
 
-  input[type="text"]#user {
-    font-size: 1.5rem;
-    width: 350px;
-    height: 40px;
-  }
-
-  button#startGame {
-    font-size: 1.5rem;
-  }
-
-  .tituloInterno {
-    font-size: 4rem;
-  }
+  /* MAIN */
 
   main {
-    min-height: 370px;
-    max-height: 550px;
-    min-width: 330px;
-    max-width: 400px;
+    min-height: 468px;
+    max-height: 468px;
+    min-width: 364px;
+    max-width: 364px;
   }
 
-  .container {
-    margin-top: 7rem;
-    margin-bottom: 2.5rem;
-  }
+  /* DIVS */
 
-  .front img {
-    padding: 0.8rem;
+  #divResultadoJuego {
+    min-width: 364px;
+    max-width: 364px;
   }
 
   #divRanking {
-    min-width: 330px;
-    max-width: 400px;
+    min-width: 364px;
+    max-width: 364px;
   }
 
-  .btnRanking {
-    font-size: 1rem;
-  }
-
-  #divRanking p {
-    font-size: 1.2rem;
-  }
-
-  #divUser {
-    font-size: 1rem;
-  }
-
-  #divIntentos {
-    font-size: 1.2rem;
-  }
-
-  #divTextContador {
-    font-size: 1.2rem;
-  }
-
-  #divFallos {
-    font-size: 1.2rem;
-  }
-
-  #resetBtn {
-    font-size: 1rem;
-  }
-
-  #exitBtn {
-    font-size: 1rem;
-  }
-
-  p#copyright {
-    font-size: 1rem;
-  }
-
-  #gracias {
-    font-size: 2rem;
-  }
-
-  #h3Resultado {
-    font-size: 1.5rem;
-    left: 14.5%;
-  }
+  /* BOTONES */
 
   #btnGameAgain {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   #btnExitGame {
-    font-size: 1rem;
-  }
-
-  #h3NotaFinal {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
-@media screen and (min-width: 800px) {
-  h1#title {
-    font-size: 6rem;
+/*  */
+
+/* PANTALLAS MEDIANAS */
+
+/*  */
+
+@media (min-width: 700px) and (max-width: 900px) {
+  /* GENERAL */
+
+  html {
+    font-size: 25.6px;
   }
 
-  input[type="text"]#user {
-    font-size: 2rem;
-    width: 400px;
-    height: 50px;
-  }
-
-  button#startGame {
-    font-size: 2rem;
-  }
-
-  .tituloInterno {
-    font-size: 5rem;
-  }
+  /* MAIN */
 
   main {
-    min-height: 420px;
-    max-height: 600px;
-    min-width: 380px;
-    max-width: 450px;
+    min-height: 576px;
+    max-height: 576px;
+    min-width: 448px;
+    max-width: 448px;
   }
 
-  .container {
-    margin-top: 8rem;
-    margin-bottom: 3.5rem;
+  /* DIVS */
+
+  #divResultadoJuego {
+    min-width: 448px;
+    max-width: 448px;
   }
 
   #divRanking {
-    min-width: 380px;
-    max-width: 450px;
+    min-width: 448px;
+    max-width: 448px;
   }
 
-  .btnRanking {
-    font-size: 1.2rem;
-  }
-
-  .front img {
-    padding: 1rem;
-  }
-
-  #divRanking p {
-    font-size: 1.5rem;
-  }
-
-  #divUser {
-    font-size: 1rem;
-  }
-
-  #divIntentos {
-    font-size: 1.5rem;
-  }
-
-  #divTextContador {
-    font-size: 1.5rem;
-  }
-
-  #divFallos {
-    font-size: 1.5rem;
-  }
-
-  #resetBtn {
-    font-size: 1.2rem;
-  }
-
-  #exitBtn {
-    font-size: 1.2rem;
-  }
-
-  p#copyright {
-    font-size: 1.2rem;
-  }
-
-  #gracias {
-    font-size: 2rem;
-  }
-
-  #h3Resultado {
-    font-size: 2rem;
-  }
+  /* BOTONES */
 
   #btnGameAgain {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   #btnExitGame {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+/*  */
+
+/* PANTALLAS GRANDES */
+
+/*  */
+
+@media (min-width: 900px) {
+  /* GENERAL */
+
+  html {
+    font-size: 30.4px;
   }
 
-  #h3NotaFinal {
-    font-size: 1.6rem;
+  /* MAIN */
+
+  main {
+    min-height: 684px;
+    max-height: 684px;
+    min-width: 532px;
+    max-width: 532px;
+  }
+
+  /* DIVS */
+
+  #divResultadoJuego {
+    min-width: 532px;
+    max-width: 532px;
+  }
+
+  #divRanking {
+    min-width: 532px;
+    max-width: 532px;
+  }
+
+  /* BOTONES */
+
+  #btnGameAgain {
+    font-size: 1.9rem;
+  }
+
+  #btnExitGame {
+    font-size: 1.9rem;
   }
 }

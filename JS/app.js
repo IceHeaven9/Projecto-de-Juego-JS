@@ -80,7 +80,7 @@ document.body.appendChild(divRanking);
 // Creamos un botón para el ranking
 const btnRanking = document.createElement("button");
 btnRanking.className = "btnRanking";
-btnRanking.textContent = "⬇Ranking⬇";
+btnRanking.textContent = "Ranking";
 mainElements.appendChild(btnRanking);
 
 const recuperarValoresYActualizarRanking = () => {
