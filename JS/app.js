@@ -132,13 +132,13 @@ recuperarValoresYActualizarRanking();
 // Creamos un botón para reiniciar el juego
 const btnGameAgain = document.createElement("button");
 btnGameAgain.id = "btnGameAgain";
-btnGameAgain.textContent = "Volver a jugar";
+btnGameAgain.textContent = "JUGAR";
 divResultado.appendChild(btnGameAgain);
 
 // Creamos un botón para salir del juego
 const btnExitGame = document.createElement("button");
 btnExitGame.id = "btnExitGame";
-btnExitGame.textContent = "Salir del juego";
+btnExitGame.textContent = "SALIR";
 divResultado.appendChild(btnExitGame);
 
 //Funcion para que H2 se muestre el valor del input user y siempre con la primera letra en mayúscula
