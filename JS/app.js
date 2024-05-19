@@ -2,6 +2,11 @@
 
 const mainElements = document.querySelector("main");
 
+// Creamos un div para poner una imagen de fondo
+const divBackground = document.createElement("div");
+divBackground.id = "divBackground";
+document.body.appendChild(divBackground);
+
 //Creamos un div dentro del body llamado divUser
 const divUser = document.createElement("div");
 divUser.id = "divUser";
@@ -53,7 +58,7 @@ mainElements.appendChild(divResultado);
 // Creamos un h2 para el mensaje de gracias por jugar
 const h2Resultado = document.createElement("h2");
 h2Resultado.id = "gracias";
-h2Resultado.textContent = "Gracias por jugar!";
+h2Resultado.textContent = "¡¡¡Gracias por jugar!!!";
 divResultado.appendChild(h2Resultado);
 
 // Creamos un h3 para el resultado de la partida
@@ -138,21 +143,18 @@ divResultado.appendChild(btnExitGame);
 
 //Funcion para que H2 se muestre el valor del input user y siempre con la primera letra en mayúscula
 user.addEventListener("input", function () {
-  const maxLength = 15;
+  const maxLength = 20;
   const userValue = user.value;
   if (userValue.length > maxLength) {
     user.value = userValue.slice(0, maxLength);
   }
 
-  h2.textContent =
-    "Suerte, " +
-    user.value
-      .split(" ")
-      .map(function (word) {
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      })
-      .join(" ") +
-    "!";
+  h2.textContent = user.value
+    .split(" ")
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(" ");
 });
 
 // Funcion para activar contador y ocultarlo al finalizar

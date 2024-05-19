@@ -9,14 +9,8 @@
 :root {
   --text-font-family: "Poetsen One", "Arial", "sans-serif";
   --title-font-family: "Oleo Script", "Arial", "sans-serif";
-  --button-hover-color: rgb(33, 169, 255);
-  --main-background-color: rgba(114, 181, 197, 0.5);
-  --card-background-color: rgb(249, 165, 199, 0.5);
-  --card-background-color2: rgb(217, 221, 194);
-  --buttons-background-color: rgb(19, 19, 19);
-  --front-card-background-color: rgb(19, 19, 19);
-  --front-card-background-color2: rgb(2, 2, 2);
-  --div-box-shadow-color: rgba(0, 0, 0, 1);
+  --main-background-color: rgba(114, 181, 197, 0.6);
+  --color-text: rgb(19, 19, 19);
   --nota-baja-color: rgb(203, 42, 73);
   --nota-media-color: rgb(248, 228, 75);
   --nota-alta-color: rgb(59, 142, 237);
@@ -48,6 +42,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 h1#title {
@@ -72,14 +67,14 @@ input[type="text"]#user {
   font-family: var(--text-font-family);
   font-style: italic;
   font-weight: bolder;
-  color: var(--buttons-background-color);
-  background-color: rgba(114, 181, 197, 0.5);
+  color: var(--color-text);
+  background-color: var(--main-background-color);
   font-size: 1rem;
   padding: 10px;
   border: none;
   border-radius: 20px;
   width: 100px;
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   height: 40px;
   width: 200px;
   outline: none;
@@ -91,14 +86,14 @@ button#startGame {
   font-family: var(--text-font-family);
   font-weight: bolder;
   margin-top: 1rem;
-  background-color: rgba(114, 181, 197, 0.5);
+  background-color: var(--main-background-color);
   color: var(--buttons-background-color);
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 20px;
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -123,27 +118,15 @@ button[type="reset"]:hover {
 body {
   font-family: var(--text-font-family);
   background-color: var(--div-background-color);
-  color: #333;
+  color: var(--color-text);
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   place-items: center;
-  background-image: url("../images/fondo\ de\ alienigenas.jpg");
-  background-size: cover;
-  background-position: center;
   font-weight: bold;
   width: 100vw;
   height: 100vh;
-  flex-wrap: nowrap;
-  overflow-y: hidden;
-}
-.tituloRanking {
-  font-family: var(--title-font-family);
-  font-size: 2rem;
-  text-shadow: 8px 8px 16px rgba(0, 0, 0, 1);
-  color: var(--div-background-color);
-  order: 3;
+  overflow: hidden;
 }
 
 /* 
@@ -156,7 +139,7 @@ body {
 
 main {
   background-color: var(--main-background-color);
-  box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   position: relative;
   min-height: 270px;
   max-height: 400px;
@@ -167,8 +150,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 1rem 0rem 1rem;
-  margin: 0rem 0.5rem 0rem 0.5rem;
+  padding: 2rem 1rem 1.5rem 1rem;
+  margin: 2rem 0.5rem 0rem 0.5rem;
   gap: 0.5rem;
   border-radius: 1rem;
   order: 1;
@@ -189,12 +172,13 @@ article ul {
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
+  border-radius: 0.5rem;
 }
 
 li {
   width: 100%;
   height: 100%;
-  box-shadow: 17px 10px 24px -1px rgba(0, 0, 0, 2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
 }
 
 .card {
@@ -203,6 +187,11 @@ li {
   transition: transform 0.6s;
   transform-style: preserve-3d;
   perspective: 600px;
+  border-radius: 0.5rem;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .card.flipped {
@@ -220,21 +209,14 @@ li {
 
 .back {
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--card-background-color),
-    var(--card-background-color2)
-  );
+  background: transparent;
   transform: rotateY(180deg);
 }
 
 .front {
   border-radius: 0.5rem;
-  background: linear-gradient(
-    var(--front-card-background-color),
-    var(--front-card-background-color2)
-  );
+  background: transparent;
 }
-
 .front img {
   height: 100%;
   width: 100%;
@@ -260,15 +242,19 @@ li {
 
 footer {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
 }
 
 p#copyright {
   font-family: var(--text-font-family);
   text-align: center;
-  color: var(--buttons-background-color);
+  color: var(--color-text);
   font-size: 0.5rem;
-  display: flex;
-  justify-content: center;
 }
 
 /* 
@@ -313,6 +299,10 @@ p#copyright {
   color: var(--nota-alta-color);
 }
 
+.borroso {
+  filter: blur(3px);
+}
+
 /* 
 ██████╗ ██╗██╗   ██╗███████╗
 ██╔══██╗██║██║   ██║██╔════╝
@@ -321,72 +311,77 @@ p#copyright {
 ██████╔╝██║ ╚████╔╝ ███████║
 ╚═════╝ ╚═╝  ╚═══╝  ╚══════╝ */
 
-#divIntentos {
+#divBackground {
   position: absolute;
-  top: 2%;
-  right: 0%;
-  font-family: var(--text-font-family);
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 5px;
-  background-color: transparent;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-  color: var(--buttons-background-color);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/fondo\ de\ alienigenas.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
 }
 
 #divUser {
   position: absolute;
   top: 2%;
-  left: 0%;
+  left: 5%;
   font-family: var(--text-font-family);
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius: 5px;
+  padding: 5px 5px;
+  border-radius: 10px;
   background-color: transparent;
-  border-radius: 20px;
   font-size: 0.6rem;
   white-space: nowrap;
-  color: var(--buttons-background-color);
+  color: var(--color-text);
+  animation: matched cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+#divIntentos {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  font-family: var(--text-font-family);
+  padding: 5px 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  color: var(--color-text);
+  animation: matched cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 #divTextContador {
   position: absolute;
-  top: 8%;
-  left: 0%;
-  padding: 5px;
+  top: 11%;
+  left: 5%;
+  padding: 5px 5px;
   border-radius: 5px;
   background-color: transparent;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 0.8rem;
   white-space: nowrap;
   font-family: "Poetsen One";
   font-weight: bolder;
-  color: var(--buttons-background-color);
-  padding-left: 15px;
-  padding-right: 15px;
+  color: var(--color-text);
   text-align: left;
+  animation: matched cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 #divFallos {
   position: absolute;
-  top: 8%;
-  right: 0%;
-  padding: 5px;
-  border-radius: 5px;
+  top: 11%;
+  right: 5%;
+  padding: 5px 5px;
+  border-radius: 10px;
   background-color: transparent;
-  border-radius: 20px;
   font-size: 0.8rem;
   white-space: nowrap;
   font-family: "Poetsen One";
   font-weight: bolder;
-  color: var(--buttons-background-color);
-  padding-left: 15px;
-  padding-right: 15px;
+  color: var(--color-text);
   text-align: left;
+  animation: matched cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 #divResultadoJuego {
@@ -394,15 +389,16 @@ p#copyright {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 30%;
-  height: 20%;
-  width: 90%;
-  height: 35%;
-  min-width: 310px;
+  font-size: 0.8rem;
+  width: 100%;
+  min-width: 250px;
+  height: 100%;
+  padding-top: 0.5rem;
+  color: var(--color-text);
   background-color: var(--main-background-color);
-  box-shadow: 0px 10px 13px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   border-radius: 1rem;
+  position: absolute; /* importante no borrar o se jode todo */
 }
 
 #gracias {
@@ -421,23 +417,15 @@ p#copyright {
   min-width: 200px;
   max-width: 280px;
   border-radius: 1rem;
-  box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  color: var(--color-text);
   background-color: var(--main-background-color);
   text-align: center;
-  margin-top: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   order: 3;
   width: 100vw;
-}
-
-.divPulsado {
-  min-width: 320px;
-  border-radius: 1rem;
-  box-shadow: 5px 8px 12px 4px rgba(0, 0, 0, 0.8);
-  text-align: center;
-  padding: 0rem 1rem 0.5rem 1rem;
-  margin-top: 1rem;
-  order: 3;
 }
 
 .pRanking {
@@ -455,98 +443,107 @@ p#copyright {
 #resetBtn {
   position: absolute;
   bottom: 2%;
-  right: 4.5%;
-  font-size: 0.8rem;
+  right: 5%;
   background-color: transparent;
+  color: var(--color-text);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  padding: 2px 5px;
+  cursor: pointer;
   font-family: var(--text-font-family);
   font-weight: bolder;
-  color: var(--buttons-background-color);
-  text-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
-  border: none;
-  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 #exitBtn {
   position: absolute;
   bottom: 2%;
   left: 5.5%;
-  font-size: 0.8rem;
   background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  color: var(--color-text);
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
   font-family: var(--text-font-family);
   font-weight: bolder;
-  color: var(--buttons-background-color);
-  text-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
-  border: none;
-  cursor: pointer;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+#exitBtn:hover,
+#resetBtn:hover,
+#btnGameAgain:hover,
+#btnExitGame:hover,
+.btnRanking:hover {
+  color: var(--color-text);
+  text-shadow: 0 0 5px rgba(19, 19, 19, 0.5);
+}
+
+#exitBtn:focus,
+#resetBtn:focus,
+#btnGameAgain:focus,
+#btnExitGame:focus,
+.btnRanking:focus {
+  color: var(--color-text);
+  text-shadow: 0 0 5px rgba(19, 19, 19, 0.5);
 }
 
 .btnRanking {
-  font-family: var(--text-font-family);
-  color: var(--buttons-background-color);
-  background-color: transparent;
+  background-color: var(--main-background-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: 2px 5px;
+  margin-bottom: 0.5rem;
   border: none;
-  font-size: 0.8rem;
-  border-radius: 20px;
-  padding: 6px;
-  padding-left: 15px;
-  padding-right: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: var(--text-font-family);
+  font-weight: bolder;
+  transition: color 0.3s, text-shadow 0.3s;
+  visibility: visible;
 }
 
 .btnRankingPulsado {
-  font-family: var(--text-font-family);
-  color: var(--div-background-color);
   background-color: transparent;
-  color: var(--buttons-background-color);
-  border: none;
-  font-size: 0.8rem;
-  border-radius: 20px;
-  padding: 6px;
-  padding-left: 15px;
-  padding-right: 15px;
+
+  animation: matched cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 #btnGameAgain {
   position: absolute;
-  max-width: 50%;
   bottom: 10%;
-  left: 5%;
+  left: 10%;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  color: var(--color-text);
+  padding: 2px 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
   font-family: var(--text-font-family);
   font-weight: bolder;
-  margin-top: 1rem;
-  background-color: var(--buttons-background-color);
-  color: var(--div-background-color);
-  border: none;
-  padding: 10px 20px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  border-radius: 20px;
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
-  transition: background-color 0.3s, transform 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 #btnExitGame {
   position: absolute;
-  max-width: 50%;
   bottom: 10%;
-  right: 5%;
+  right: 10%;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  color: var(--color-text);
+  padding: 2px 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
   font-family: var(--text-font-family);
   font-weight: bolder;
-  margin-top: 1rem;
-  background-color: var(--buttons-background-color);
-  color: var(--div-background-color);
-  border: none;
-  padding: 10px 20px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  border-radius: 20px;
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-#btnGameAgain:hover,
-#btnExitGame:hover {
-  background-color: var(--button-hover-color);
-  transform: translateY(-2px);
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 /* 

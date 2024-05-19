@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const divResultadoJuegoContent = document.getElementById("divResultadoJuego");
   const divRankingContent = document.getElementById("divRanking");
   const pFromRanking = document.getElementsByClassName("pRanking");
+  const divBackgroundContent = document.getElementById("divBackground");
 
   gameContent.classList.add("hidden");
   divUserContent.classList.add("hidden");
@@ -109,11 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
   divTextContadorContent.classList.add("hidden");
   divIntentosContent.classList.add("hidden");
   resetBtnContent.classList.add("hidden");
-  divResultadoJuegoContent.classList.add("parteOculta");
+
   divRankingContent.classList.add("hidden");
   for (let i = 0; i < pFromRanking.length; i++) {
     pFromRanking[i].classList.add("hidden");
   }
+  divRankingContent.classList.add("parteOculta");
 
   startGameBtn.addEventListener("click", startGame);
   resetBtnController2.addEventListener("click", resetGame);
@@ -130,6 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
       divIntentosContent.classList.remove("hidden");
       resetBtnContent.classList.remove("hidden");
       divRankingContent.classList.remove("hidden");
+      divBackgroundContent.classList.add("borroso");
+      divResultadoJuegoContent.classList.add("parteOculta");
 
       initializeGame();
     }
@@ -141,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     divResultadoJuegoContent.classList.add("parteOculta");
     divResultadoJuegoContent.classList.remove("parteVisible");
     gameContent.classList.remove("parteOculta");
-    divRankingContent.classList.remove("parteOculta");
+
     matchedCards = 0;
     initializeGame();
   }
@@ -174,12 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
       frontImg.src = "../images/logohabnew.png";
       frontImg.alt = "logo hack a boss";
       front.appendChild(frontImg);
-
       content.appendChild(front);
       content.appendChild(back);
       card.appendChild(content);
       container.appendChild(card);
-
       card.addEventListener("click", reveal);
     }
   }
@@ -255,11 +257,9 @@ document.addEventListener("DOMContentLoaded", function () {
 const btnRankingContent = document.getElementsByClassName("btnRanking")[0];
 
 btnRankingContent.addEventListener("click", function () {
-  const divRankingContent = document.getElementById("divRanking");
   const pFromRanking = document.getElementsByClassName("pRanking");
-
-  divRankingContent.classList.remove("hidden");
-  divRankingContent.classList.toggle("divPulsado");
+  const divRankingContent = document.getElementById("divRanking");
+  divRankingContent.classList.toggle("parteOculta");
   btnRankingContent.classList.toggle("btnRankingPulsado");
 
   for (let i = 0; i < pFromRanking.length; i++) {
