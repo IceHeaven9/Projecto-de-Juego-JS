@@ -88,7 +88,7 @@ button#startGame {
   font-weight: bolder;
   margin-top: 1rem;
   background-color: var(--main-background-color);
-  color: var(--buttons-background-color);
+  color: var(--color-text);
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -100,12 +100,6 @@ button#startGame {
 
 button#startGame {
   animation: anim2 5s infinite;
-}
-
-button#startGame:hover,
-button[type="reset"]:hover {
-  background-color: var(--button-hover-color);
-  transform: translateY(-2px);
 }
 
 /*
@@ -393,13 +387,13 @@ p#copyright {
   font-size: 0.8rem;
   width: 100%;
   min-width: 250px;
-  height: 100%;
   padding-top: 0.5rem;
   color: var(--color-text);
   background-color: var(--main-background-color);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
   border-radius: 1rem;
   position: absolute; /* importante no borrar o se jode todo */
+  top: 50%;
 }
 
 #gracias {
@@ -440,31 +434,6 @@ p#copyright {
 ██╔══██╗██║   ██║   ██║   ██║   ██║██║╚██╗██║██╔══╝  ╚════██║
 ██████╔╝╚██████╔╝   ██║   ╚██████╔╝██║ ╚████║███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝ */
-
-button#startGame {
-  font-family: var(--text-font-family);
-  font-weight: bolder;
-  margin-top: 1rem;
-  background-color: rgba(114, 181, 197, 0.5);
-  color: var(--buttons-background-color);
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 20px;
-  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-button#startGame {
-  animation: anim2 5s infinite;
-}
-
-button#startGame:hover,
-button[type="reset"]:hover {
-  background-color: var(--button-hover-color);
-  transform: translateY(-2px);
-}
 
 #resetBtn {
   position: absolute;

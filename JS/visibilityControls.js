@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     divResultadoJuegoContent.classList.add("parteOculta");
     divResultadoJuegoContent.classList.remove("parteVisible");
     gameContent.classList.remove("parteOculta");
+    btnRankingContent.classList.remove("hidden");
 
     matchedCards = 0;
     initializeGame();
@@ -249,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
       gameContent.classList.add("parteOculta");
       divResultadoJuegoContent.classList.add("parteVisible");
       divRankingContent.classList.add("parteOculta");
+      btnRankingContent.classList.add("hidden");
     }
   }
 });
