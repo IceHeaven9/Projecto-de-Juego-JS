@@ -14,6 +14,7 @@
   --nota-baja-color: rgb(203, 42, 73);
   --nota-media-color: rgb(248, 228, 75);
   --nota-alta-color: rgb(59, 142, 237);
+  --button-text-color: rgb(232, 232, 232);
 }
 
 /* 
@@ -439,6 +440,31 @@ p#copyright {
 ██╔══██╗██║   ██║   ██║   ██║   ██║██║╚██╗██║██╔══╝  ╚════██║
 ██████╔╝╚██████╔╝   ██║   ╚██████╔╝██║ ╚████║███████╗███████║
 ╚═════╝  ╚═════╝    ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝ */
+
+button#startGame {
+  font-family: var(--text-font-family);
+  font-weight: bolder;
+  margin-top: 1rem;
+  background-color: rgba(114, 181, 197, 0.5);
+  color: var(--buttons-background-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 17px 10px 24px -1px var(--div-box-shadow-color);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button#startGame {
+  animation: anim2 5s infinite;
+}
+
+button#startGame:hover,
+button[type="reset"]:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-2px);
+}
 
 #resetBtn {
   position: absolute;
