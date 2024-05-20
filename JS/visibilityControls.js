@@ -223,18 +223,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Función botón de volver a jugar desde el div con la puntuación
-  const btnGameAgainContent = document.getElementById("btnGameAgain");
-  btnGameAgainContent.addEventListener("click", resetGame);
-
-  //funcion para salir del juego desde el main
+  // Función para salir del juego desde el main
   const exitMainBtn = document.getElementById("exitBtn");
   exitMainBtn.addEventListener("click", function () {
     location.reload();
   });
 
-  // Función para salir del juego desde el div con la puntuación
+  // Función botón de volver a jugar desde el div del resultado
+  const btnGameAgainContent = document.getElementById("btnGameAgain");
+  btnGameAgainContent.addEventListener("click", resetGame);
 
+  // Función para salir del juego desde el div del resultado
   const btnExitGameContent = document.getElementById("btnExitGame");
   btnExitGameContent.addEventListener("click", function () {
     location.reload();
@@ -255,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Función para mostrar el ranking
+// Función para mostrar el ranking con el botón ranking
 const btnRankingContent = document.getElementsByClassName("btnRanking")[0];
 
 btnRankingContent.addEventListener("click", function () {
