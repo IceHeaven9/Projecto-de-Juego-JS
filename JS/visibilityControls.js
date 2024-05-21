@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Asignar imagen al frente
       const frontImg = document.createElement("img");
-      frontImg.src = "../images/logohabnew.png";
+      frontImg.src = "./images/logohabnew.png";
       frontImg.alt = "logo hack a boss";
       front.appendChild(frontImg);
       content.appendChild(front);
