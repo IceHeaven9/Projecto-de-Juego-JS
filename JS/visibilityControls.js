@@ -77,10 +77,12 @@ function contadores(divIntentosContent, divFallosContent) {
     determinarClaseColor: function (nota) {
       if (nota < 5) {
         return "nota-baja";
-      } else if (nota > 9) {
+      } else if (nota >= 5 && nota < 7) {
+        return "nota-media";
+      } else if (nota >= 7 && nota < 9) {
         return "nota-alta";
       } else {
-        return "nota-media";
+        return "nota-muy-alta";
       }
     },
   };
