@@ -132,7 +132,12 @@ const recuperarValoresYActualizarRanking = () => {
   arrayUsuarioNota.forEach((elemento) => {
     const pUser = document.createElement("p");
     pUser.classList.add("pRankingUsuario");
-    pUser.textContent = `${elemento.user}`;
+    pUser.textContent = `${elemento.user}`
+      .split(" ")
+      .map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      })
+      .join(" ");
     divRanking.appendChild(pUser);
     const pNota = document.createElement("p");
     pNota.classList.add("pRankingNota");
